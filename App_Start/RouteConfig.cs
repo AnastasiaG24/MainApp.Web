@@ -19,12 +19,6 @@ namespace MainApp.Web
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
 
             );
-               routes.MapRoute(
-                name: "TestRoute",
-                url: "{test}/{action}/{id}",
-                defaults: new { controller = "Test", action = "Index", id = UrlParameter.Optional }
-
-            );
           }
     }
 }
