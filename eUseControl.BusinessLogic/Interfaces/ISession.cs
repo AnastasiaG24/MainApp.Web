@@ -9,7 +9,7 @@ using eUseControl.Domain.Entities.Res;
 
 namespace eUseControl.BusinessLogic.Interfaces
 {
-   public class ISession
+   public interface ISession
     {
         ActionStatus UserLogin(ULoginData data);
 

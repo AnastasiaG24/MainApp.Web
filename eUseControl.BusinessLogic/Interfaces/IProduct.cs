@@ -7,7 +7,7 @@ using eUseControl.Domain.Entities.Product;
 
 namespace eUseControl.BusinessLogic.Interfaces
 {
-    public class IProduct
+    public interface IProduct
     {
         ProductDetail GetDetailProduct(int id);
     }
