@@ -15,7 +15,7 @@ namespace eUseControl.BusinessLogic
     {
         public ActionStatus UserLogin(ULoginData data)
         {
-            return UserLogDate(data);
+            return UserLogData(data);
         }
 
         public LevelStatus CheckLevel(string key)
