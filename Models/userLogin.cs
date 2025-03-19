@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MainApp.Web.Models
 {
-    public class userLogin
+    public class UserLogin
     {
         public string Credential;
         public string Password;

@@ -7,6 +7,7 @@ using eUseControl.BusinessLogic.Interfaces;
 using eUseControl.BusinessLogic;
 using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Entities.User.Global;
+using MainApp.Web.Models;
 
 namespace eUseControl.Web.Controllers
 {

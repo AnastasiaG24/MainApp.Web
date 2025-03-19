@@ -12,7 +12,6 @@ namespace eUseControl.BusinessLogic.Interfaces
    public interface ISession
     {
         ActionStatus UserLogin(ULoginData data);
-
         LevelStatus CheckLevel(string key);
     }
 }
