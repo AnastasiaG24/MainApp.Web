@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.BusinessLogic;
+using eUseControl.Domain.Entities.User;
+using eUseControl.Domain.Entities.User.Global;
 
 namespace eUseControl.Web.Controllers
 {
@@ -12,14 +16,14 @@ namespace eUseControl.Web.Controllers
 
         public LoginController()
         {
-            var b1 = new BussinesLogic();
-            _session = b1.GetSessionBL();
+               var b1 = new eUseControl.BusinessLogic.BusinessLogic();
+               _session = b1.GetSessionBL();
         }
 
         // GET: Login
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(userLogin login)
+        public ActionResult Index(UserLogin login)
         {
             if (ModelState.IsValid)
             {

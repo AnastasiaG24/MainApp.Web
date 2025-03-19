@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.BusinessLogic;
+using eUseControl.Domain.Entities.Product;
 
 namespace MainApp.Web.Controllers
 {
@@ -13,7 +16,7 @@ namespace MainApp.Web.Controllers
         // GET: ProductDetail
         public ProductDetailController()
         {
-            BussinesLogic bussines1 = new BussinesLogic();
+            BusinessLogic bussines1 = new BusinessLogic();
             _product = bussines1.GetProductBL();
         }
 
