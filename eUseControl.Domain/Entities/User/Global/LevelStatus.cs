@@ -9,7 +9,7 @@ namespace eUseControl.Domain.Entities.User.Global
 {
     public class LevelStatus
     {
-        public LevelAcces Level { get; set; }
+        public URole Level { get; set; }
         public DateTime SessionTime { get; set; }
     }
 }

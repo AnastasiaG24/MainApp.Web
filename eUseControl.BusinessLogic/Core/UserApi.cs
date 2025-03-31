@@ -6,6 +6,7 @@ using eUseControl.Domain.Entities.User.Global;
 using eUseControl.Domain.Entities.Product;
 using eUseControl.BusinessLogic.DBModel;
 using System.Linq;
+using System;
 using System.Collections.Generic;
 
 
@@ -22,7 +23,7 @@ namespace eUseControl.BusinessLogic.Core
             UDbTable result;
             using (var db = new UserContext())
             {
-                result = db.Users.FirstOrDefault(u => u.Username == data.Username && u.Password ==
+                result = db.Users.FirstOrDefault(u => u.Username == data.Credential && u.Password ==
                 data.Password);
             }
             if (result == null)

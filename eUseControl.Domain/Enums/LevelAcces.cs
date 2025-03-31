@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eUseControl.Domain.Enums
 {
-    public enum LevelAcces
+    public enum URole
     {
         Guest,
         User,
