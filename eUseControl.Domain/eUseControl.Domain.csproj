@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,6 +45,7 @@
     <Compile Include="Entities\Product\ProductDetail.cs" />
     <Compile Include="Entities\Res\ActionStatus.cs" />
     <Compile Include="Entities\User\Global\LevelStatus.cs" />
+    <Compile Include="Entities\User\UDbTable.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Enums\LevelAcces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
