@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Optimization;
-using System.Web.UI;
+﻿using System.Web.Optimization;
 
 namespace MainApp.Web.App_Start
 {
-	public static class BundleConfig
-	{
-		public static void RegisterBundles(BundleCollection bundles)
-		{
-              
+     public static class BundleConfig
+     {
+          public static void RegisterBundles(BundleCollection bundles)
+          {
+
                bundles.Add(new StyleBundle("~/bundles/style/css")
                     .Include("~/Content/Styles/style.css", new CssRewriteUrlTransform()));
 
@@ -34,10 +29,10 @@ namespace MainApp.Web.App_Start
                     .Include("~/Content/Scripts/lib/owlcarousel/owl.carousel.js"));
                bundles.Add(new ScriptBundle("~/bundles/owlcarouselmin/js")
                     .Include("~/Content/Scripts/lib/owlcarousel/owl.carousel.min.js"));
-           
+
                bundles.Add(new ScriptBundle("~/bundles/lightbox/js")
                     .Include("~/Content/Scripts/lib/lightbox/lightbox.min.js"));
-               
+
                bundles.Add(new ScriptBundle("~/bundles/main/js")
                     .Include("~/Content/Scripts/main.js"));
 

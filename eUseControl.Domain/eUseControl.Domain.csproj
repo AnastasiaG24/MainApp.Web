@@ -51,12 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Product\ProductDetail.cs" />
+    <Compile Include="Entities\Product\Cart.cs" />
+    <Compile Include="Entities\Product\Ofert.cs" />
     <Compile Include="Entities\Res\ActionStatus.cs" />
     <Compile Include="Entities\User\Global\LevelStatus.cs" />
-    <Compile Include="Entities\User\UDbTable.cs" />
-    <Compile Include="Entities\User\ULoginData.cs" />
-    <Compile Include="Entities\User\ULoginResp.cs" />
+    <Compile Include="Entities\User\UserDbTable.cs" />
+    <Compile Include="Entities\User\UserLoginData.cs" />
+    <Compile Include="Entities\User\UserLoginResp.cs" />
     <Compile Include="Enums\LevelAcces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
