@@ -4,13 +4,15 @@ using eUseControl.Domain.Entities.Product;
 using eUseControl.Domain.Entities.Res;
 using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Entities.User.Global;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 
 namespace eUseControl.BusinessLogic.Core
 {
-     internal class AdminApi : ISession, IAdminOfert
+     internal class AdminApi : ISession, IAdminOfert, IAuth
      {
         private readonly UserContext db;
 
@@ -67,6 +69,81 @@ namespace eUseControl.BusinessLogic.Core
                 Level = user.Level,
                 SessionTime = user.LastLogin
             };
+        }
+
+        public bool CheckUserExists(string credential, string email)
+        {
+            if (string.IsNullOrWhiteSpace(credential) || string.IsNullOrWhiteSpace(email))
+                return false;
+
+            using (var db = new UserContext())
+            {
+                var exists = db.Users.Any(u =>
+                    u.Credential == credential || u.Email == email);
+
+                return exists;
+            }
+        }
+
+        public bool CreateUser(UserRegisterData register)
+        {
+            if (register.Credential == "")
+            {
+                throw new ArgumentException("Numele de utilizator este obligatoriu.");
+            }
+
+            if (register.Password == "")
+            {
+                throw new ArgumentException("Parola este obligatorie.");
+            }
+
+            if (register.Password.Length < 8)
+            {
+                throw new ArgumentException("Parola trebuie să conțină cel puțin 8 caractere.");
+            }
+
+            if (register.Password != register.ConfirmPassword)
+            {
+                throw new ArgumentException("Parolele nu coincid.");
+            }
+
+            if (register.Email == "")
+            {
+                throw new ArgumentException("Emailul este obligatoriu.");
+            }
+
+            if (!register.Email.Contains("@") || !register.Email.Contains("."))
+            {
+                throw new ArgumentException("Formatul emailului nu este valid.");
+            }
+
+            if (register.Country == "")
+            {
+                throw new ArgumentException("Țara este obligatorie.");
+            }
+
+
+            using (var db = new UserContext())
+    {
+        var exists = db.Users.FirstOrDefault(u =>
+            u.Credential == register.Credential || u.Email == register.Email);
+
+        if (exists != null)
+            throw new InvalidOperationException("Utilizatorul sau emailul există deja.");
+
+        var newUser = new UserDbTable
+        {
+            Credential = register.Credential,
+            Password = register.Password, // parola salvata in clar (pentru test)
+            Email = register.Email,
+            Country = register.Country,
+            CreatedAt = DateTime.Now
+        };
+
+        db.Users.Add(newUser);
+        db.SaveChanges();
+        }
+            return true; 
         }
 
         public void DeleteOfertById(int id)

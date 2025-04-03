@@ -55,6 +55,7 @@
     <Compile Include="Core\AdminApi.cs" />
     <Compile Include="Core\UserApi.cs" />
     <Compile Include="DBModel\UserContext.cs" />
+    <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IUserOfert.cs" />
     <Compile Include="Interfaces\ISession.cs" />
     <Compile Include="ProductBL.cs" />

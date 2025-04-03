@@ -1,0 +1,48 @@
+﻿@model eUseControl.Domain.Entities.User.UserRegisterData
+
+@{
+    ViewBag.Title = "Înregistrare";
+    Layout = null;
+    var fieldStyle = "form-group mb-4"; // clasa cu spațiu mărit
+}
+
+<h2 style="text-align:center; margin-bottom: 40px;">Înregistrare</h2>
+
+@using (Html.BeginForm("Register", "Login", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+@Html.AntiForgeryToken()
+
+<div class="@fieldStyle">
+    @Html.LabelFor(m => m.Credential)
+    @Html.TextBoxFor(m => m.Credential, new { @class = "form-control", placeholder = "Nume de utilizator" })
+    @Html.ValidationMessageFor(m => m.Credential)
+</div>
+
+<div class="@fieldStyle">
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Parolă" })
+    @Html.ValidationMessageFor(m => m.Password)
+</div>
+
+<div class="@fieldStyle">
+    @Html.LabelFor(m => m.ConfirmPassword)
+    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirmă parola" })
+    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+</div>
+
+<div class="@fieldStyle">
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+    @Html.ValidationMessageFor(m => m.Email)
+</div>
+
+<div class="@fieldStyle">
+    @Html.LabelFor(m => m.Country)
+    @Html.TextBoxFor(m => m.Country, new { @class = "form-control", placeholder = "Țara" })
+    @Html.ValidationMessageFor(m => m.Country)
+</div>
+
+<div class="form-group text-center" style="margin-top: 30px;">
+    <input type="submit" value="Înregistrează-te" class="btn btn-primary btn-lg" />
+</div>
+}
