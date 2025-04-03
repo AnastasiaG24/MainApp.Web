@@ -6,13 +6,13 @@ namespace MainApp.Web.Controllers
 {
      public class ProductDetailController : Controller
      {
-          private IUserOfert _product;
+          private readonly IUserOfert _userOfert;
 
           // GET: ProductDetail
           public ProductDetailController()
           {
                BusinessLogic bussines1 = new BusinessLogic();
-               _product = bussines1.GetProductBL();
+               _userOfert = bussines1.GetProductBL();
           }
 
           public ActionResult Index()
@@ -21,9 +21,9 @@ namespace MainApp.Web.Controllers
           }
 
           [HttpPost]
-          public ActionResult GetProduct(int id)
+          public ActionResult GetOfert(int id)
           {
-               ProductDetail prodDetail = _product.GetDetailProduct(id);
+               eUseControl.Domain.Entities.Product.Ofert ofert = _userOfert.GetOfertById(id);
                return View();
           }
      }

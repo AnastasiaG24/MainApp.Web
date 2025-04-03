@@ -8,14 +8,14 @@ namespace eUseControl.BusinessLogic
 {
      public class SessionBL : UserApi, ISession
      {
-          public ActionStatus UserLogin(UserLoginData data)
+          public UserLoginResp UserLogin(UserLoginData data)
           {
-               return UserSessionData(data);
+               return base.UserSessionData(data);
           }
 
           public LevelStatus CheckLevel(string key)
           {
-               return CheckLevelLogic(key);
+               return base.CheckLevel(key);
           }
      }
 }
