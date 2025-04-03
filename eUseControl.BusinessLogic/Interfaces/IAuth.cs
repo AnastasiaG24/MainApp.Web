@@ -4,11 +4,10 @@ using eUseControl.Domain.Entities.User.Global;
 
 namespace eUseControl.BusinessLogic.Interfaces
 {
-     public interface ISession
-     {
+    public interface IAuth
+    {
         ActionStatus UserLogin(UserLoginData data);
-        LevelStatus CheckLevel(string key);
         bool CreateUser(UserRegisterData register);
-        bool CheckUserExists(string credential, string email);
+
     }
 }

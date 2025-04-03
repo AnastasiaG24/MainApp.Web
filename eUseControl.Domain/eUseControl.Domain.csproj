@@ -58,6 +58,7 @@
     <Compile Include="Entities\User\UserDbTable.cs" />
     <Compile Include="Entities\User\UserLoginData.cs" />
     <Compile Include="Entities\User\UserLoginResp.cs" />
+    <Compile Include="Entities\User\UserRegisterData.cs" />
     <Compile Include="Enums\LevelAcces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

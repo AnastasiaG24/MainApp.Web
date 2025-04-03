@@ -37,6 +37,8 @@ namespace eUseControl.Domain.Entities.User
           [StringLength(30)]
           public string LastIp { get; set; }
           public URole Level { get; set; }
-
-     }
+        public string Credential { get; set; }
+        public string Country { get; set; }
+        public DateTime CreatedAt { get; set; }
+    }
 }
