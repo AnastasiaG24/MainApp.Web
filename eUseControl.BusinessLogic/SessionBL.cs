@@ -1,6 +1,5 @@
 ﻿using eUseControl.BusinessLogic.Core;
 using eUseControl.BusinessLogic.Interfaces;
-using eUseControl.Domain.Entities.Res;
 using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Entities.User.Global;
 

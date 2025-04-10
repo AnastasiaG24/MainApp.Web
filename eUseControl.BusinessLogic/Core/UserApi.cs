@@ -15,11 +15,11 @@ namespace eUseControl.BusinessLogic.Core
      public class UserApi : ISession, IUserOfert, IAuth
      {
           private readonly UserContext db;
-        public UserApi()
+          public UserApi()
           {
                db = new UserContext();
           }
-        public LevelStatus CheckLevel(string key) //determinarea nivelului de acces al utilizatorului
+          public LevelStatus CheckLevel(string key) //determinarea nivelului de acces al utilizatorului
           {
                var user = db.Users.FirstOrDefault(searchedUser => searchedUser.Username == key);
                if (user == null)
@@ -38,87 +38,85 @@ namespace eUseControl.BusinessLogic.Core
                };
           }
 
-        public bool CheckUserExists(string credential, string email)
-        {
-            if (string.IsNullOrWhiteSpace(credential) || string.IsNullOrWhiteSpace(email))
-                return false;
+          public bool CheckUserExists(string credential, string email)
+          {
+               if (string.IsNullOrWhiteSpace(credential) || string.IsNullOrWhiteSpace(email))
+                    return false;
 
-            using (var db = new UserContext())
-            {
-                var exists = db.Users.Any(u =>
-                    u.Credential == credential || u.Email == email);
+               using (var db = new UserContext())
+               {
+                    var exists = db.Users.Any(u =>
+                        u.Credential == credential || u.Email == email);
 
-                return exists;
-            }
-        }
+                    return exists;
+               }
+          }
 
-        public bool CreateUser(UserRegisterData register)
-        {
-            if (register.Credential == "")
-            {
-                throw new ArgumentException("Numele de utilizator este obligatoriu.");
-            }
+          public bool RegisterUser(UserRegisterData register)
+          {
+               if (register.Credential == "")
+               {
+                    throw new ArgumentException("Numele de utilizator este obligatoriu.");
+               }
 
-            if (register.Password == "")
-            {
-                throw new ArgumentException("Parola este obligatorie.");
-            }
+               if (register.Password == "")
+               {
+                    throw new ArgumentException("Parola este obligatorie.");
+               }
 
-            if (register.Password.Length < 8)
-            {
-                throw new ArgumentException("Parola trebuie să conțină cel puțin 8 caractere.");
-            }
+               if (register.Password.Length < 8)
+               {
+                    throw new ArgumentException("Parola trebuie să conțină cel puțin 8 caractere.");
+               }
 
-            if (register.Password != register.ConfirmPassword)
-            {
-                throw new ArgumentException("Parolele nu coincid.");
-            }
+               if (register.Password != register.ConfirmPassword)
+               {
+                    throw new ArgumentException("Parolele nu coincid.");
+               }
 
-            if (register.Email == "")
-            {
-                throw new ArgumentException("Emailul este obligatoriu.");
-            }
+               if (register.Email == "")
+               {
+                    throw new ArgumentException("Emailul este obligatoriu.");
+               }
 
-            if (!register.Email.Contains("@") || !register.Email.Contains("."))
-            {
-                throw new ArgumentException("Formatul emailului nu este valid.");
-            }
+               if (!register.Email.Contains("@") || !register.Email.Contains("."))
+               {
+                    throw new ArgumentException("Formatul emailului nu este valid.");
+               }
 
-            if (register.Country == "")
-            {
-                throw new ArgumentException("Țara este obligatorie.");
-            }
+               if (register.Country == "")
+               {
+                    throw new ArgumentException("Țara este obligatorie.");
+               }
 
 
-            using (var db = new UserContext())
-            {
-                var exists = db.Users.FirstOrDefault(u =>
-                    u.Credential == register.Credential || u.Email == register.Email);
+                    var exists = db.Users.FirstOrDefault(u =>
+                        u.Credential == register.Credential || u.Email == register.Email);
 
-                if (exists != null)
-                    throw new InvalidOperationException("Utilizatorul sau emailul există deja.");
+                    if (exists != null)
+                         throw new InvalidOperationException("Utilizatorul sau emailul există deja.");
 
-                var newUser = new UserDbTable
-                {
-                    Credential = register.Credential,
-                    Password = register.Password, // parola salvata in clar (pentru test)
-                    Email = register.Email,
-                    Country = register.Country,
-                    CreatedAt = DateTime.Now
-                };
+                    var newUser = new UserDbTable
+                    {
+                         Credential = register.Credential,
+                         Password = register.Password, // parola salvata in clar (pentru test)
+                         Email = register.Email,
+                         Country = register.Country,
+                         CreatedAt = DateTime.Now
+                    };
 
-                db.Users.Add(newUser);
-                db.SaveChanges();
-            }
-            return true;
-        }
+                    db.Users.Add(newUser);
+                    db.SaveChanges();
+               
+               return true;
+          }
 
-        public List<Ofert> GetAllOferts()
+          public List<Ofert> GetAllOferts()
           {
                return db.Oferts.ToList();
           }
 
-        public Ofert GetOfertById(int id)
+          public Ofert GetOfertById(int id)
           {
                var ofert = db.Oferts.FirstOrDefault(searchedOfert => searchedOfert.Id == id);
 
@@ -129,7 +127,7 @@ namespace eUseControl.BusinessLogic.Core
                return ofert;
           }
 
-        public ActionStatus UserLogin(UserLoginData data)
+          public ActionStatus UserLogin(UserLoginData data)
           {
                var status = new ActionStatus();
 
@@ -160,11 +158,11 @@ namespace eUseControl.BusinessLogic.Core
                return status;
           }
 
-        public bool UserSessionStatus()
+          public bool UserSessionStatus()
           {
                return true;
           }
-        internal UserLoginResp UserSessionData(UserLoginData data)
+          internal UserLoginResp UserSessionData(UserLoginData data)
           {
                UserDbTable result;
 

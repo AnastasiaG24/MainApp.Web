@@ -6,9 +6,9 @@ namespace eUseControl.BusinessLogic.Interfaces
 {
      public interface ISession
      {
-        ActionStatus UserLogin(UserLoginData data);
-        LevelStatus CheckLevel(string key);
-        bool CreateUser(UserRegisterData register);
-        bool CheckUserExists(string credential, string email);
-    }
+          ActionStatus UserLogin(UserLoginData data);
+          LevelStatus CheckLevel(string key);
+          bool RegisterUser(UserRegisterData register);
+          bool CheckUserExists(string credential, string email);
+     }
 }

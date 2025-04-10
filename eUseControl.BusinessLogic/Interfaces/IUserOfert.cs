@@ -7,7 +7,6 @@ namespace eUseControl.BusinessLogic.Interfaces
      {
           Ofert GetOfertById(int id);
           List<Ofert> GetAllOferts();
-
      }
 
      public interface IAdminOfert : IUserOfert
