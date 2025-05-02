@@ -28,7 +28,7 @@ namespace eUseControl.Domain.Entities.User
           [StringLength(30)]
           public string Email { get; set; }
 
-          public int CartId { get; set; }
+          public int? CartId { get; set; }
           public Cart Cart { get; set; }
 
           [DataType(DataType.Date)]
