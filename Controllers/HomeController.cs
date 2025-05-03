@@ -9,6 +9,5 @@ namespace MainApp.Web.Controllers
           {
                return View();
           }
-
      }
 }
