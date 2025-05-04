@@ -21,11 +21,17 @@ namespace MainApp.Web.Controllers
                var users = new UserContext().Users.ToList();
                return View(users);
           }
-          public ActionResult ManageUsers()
-          {
-               // Logica pentru afișarea utilizatorilor
-               return View();
-          }
+        public ActionResult ManageUsers()
+        {
+            if ((string)Session["LoginStatus"] != "login")
+                return RedirectToAction("Login", "Login");
 
-     }
+            if ((string)Session["UserRole"] != "Admin")
+                return RedirectToAction("Unauthorized", "Login");
+
+            var users = new UserContext().Users.ToList(); 
+            return View(users);
+        }
+
+    }
 }

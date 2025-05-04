@@ -362,9 +362,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# Ignoră fișierul App.config și Web.config dacă nu vrei să urci setările locale
 App.config
 Web.config
 
-# Ignoră fișiere de migrație (dacă nu vreți să le urcați)
 Migrations/

@@ -104,7 +104,7 @@ public class LoginController : Controller
                var result = _session.RegisterUser(register);
                if (result)
                {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Login", "Login");
                }
                else
                {
