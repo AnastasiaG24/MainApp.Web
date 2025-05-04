@@ -23,6 +23,7 @@
                               <a href="#" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notificări</a>
                               <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Setări cont</a>
                               <a href="#" class="dropdown-item"><i class="fas fa-power-off me-2"></i> Ieșire </a>
+
                          </div>
                     </div>
                </div>
@@ -45,6 +46,7 @@
                <a href="/" class="nav-item nav-link">Servicii</a>
                <a href="/" class="nav-item nav-link">Promoții</a>
                <a href="/" class="nav-item nav-link">Blog</a>
+
                <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pagini</a>
                     <div class="dropdown-menu m-0">
@@ -58,6 +60,10 @@
                     </div>
                </div>
                <a href="contact.html" class="nav-item nav-link">Contacte</a>
+               @if (Session["UserRole"]?.ToString() == "Admin")
+               {
+                    <a href="/Admin/Index" class="nav-item nav-link">Admin Panel</a>
+               }
           </div>
           <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Rezervează acum</a>
      </div>
