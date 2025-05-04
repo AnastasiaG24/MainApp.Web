@@ -58,9 +58,9 @@
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IUserOfert.cs" />
     <Compile Include="Interfaces\ISession.cs" />
-    <Compile Include="Migrations\202504041150434_InitialCreate.cs" />
-    <Compile Include="Migrations\202504041150434_InitialCreate.Designer.cs">
-      <DependentUpon>202504041150434_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202505021127005_InitialCreate.cs" />
+    <Compile Include="Migrations\202505021127005_InitialCreate.Designer.cs">
+      <DependentUpon>202505021127005_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductBL.cs" />
@@ -85,8 +85,8 @@
     <Folder Include="DBModel\Seed\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202504041150434_InitialCreate.resx">
-      <DependentUpon>202504041150434_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202505021127005_InitialCreate.resx">
+      <DependentUpon>202505021127005_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
