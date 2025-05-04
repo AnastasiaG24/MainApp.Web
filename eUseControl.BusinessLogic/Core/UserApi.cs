@@ -96,17 +96,26 @@ namespace eUseControl.BusinessLogic.Core
                     if (exists != null)
                          throw new InvalidOperationException("Utilizatorul sau emailul există deja.");
 
-                    var newUser = new UserDbTable
-                    {
-                         Credential = register.Credential,
-                         Password = register.Password, // parola salvata in clar (pentru test)
-                         Email = register.Email,
-                         Country = register.Country,
-                         CreatedAt = DateTime.Now
-                    };
+               var cart = new Cart
+               {
+                    //Id = register.Id,
+                    //UserId = register.UserId,
 
-                    db.Users.Add(newUser);
-                    db.SaveChanges();
+               };
+
+               var newUser = new UserDbTable
+               {
+                    Credential = register.Credential,
+                    Password = register.Password,
+                    Email = register.Email,
+                    Country = register.Country,
+                    CreatedAt = DateTime.Now,
+                    Username = register.Credential,
+                    LastLogin = DateTime.Now
+               };
+
+               db.Users.Add(newUser);
+               db.SaveChanges();
                
                return true;
           }
@@ -154,6 +163,8 @@ namespace eUseControl.BusinessLogic.Core
                }
                user.LastLogin = data.LoginDataTime;
                user.LastIp = data.LoginIp;
+               status.Status = true;
+               status.StatusMessage = "Autentificare cu succes.";
                db.SaveChanges();
                return status;
           }

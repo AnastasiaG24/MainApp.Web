@@ -3,6 +3,7 @@ using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Entities.User.Global;
 using MainApp.Web.Models;
 using System;
+using System.Diagnostics;
 using System.Web.Mvc;
 
 public class LoginController : Controller
