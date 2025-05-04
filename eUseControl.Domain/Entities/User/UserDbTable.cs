@@ -27,7 +27,6 @@ namespace eUseControl.Domain.Entities.User
           [Display(Name = "Email Address")]
           [StringLength(30)]
           public string Email { get; set; }
-
           public int? CartId { get; set; }
           public Cart Cart { get; set; }
 
@@ -40,6 +39,5 @@ namespace eUseControl.Domain.Entities.User
           public string Credential { get; set; }
           public string Country { get; set; }
           public DateTime CreatedAt { get; set; }
-         
-    }
+     }
 }

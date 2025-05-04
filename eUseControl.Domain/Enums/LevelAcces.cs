@@ -3,7 +3,7 @@
      public enum URole
      {
           Guest,
-          User,
-          Admin
+          User = 0,
+          Admin = 1
      }
 }

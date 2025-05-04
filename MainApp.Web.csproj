@@ -211,6 +211,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FilterConfig2.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
@@ -242,6 +243,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="bin\roslyn\" />
     <Folder Include="Data\" />
+    <Folder Include="Views\Admin\" />
     <Folder Include="Views\ProductDetail\" />
   </ItemGroup>
   <ItemGroup>

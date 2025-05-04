@@ -1,6 +1,7 @@
 ﻿using eUseControl.BusinessLogic.Interfaces;
 using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Entities.User.Global;
+using eUseControl.Domain.Enums;
 using MainApp.Web.Models;
 using System;
 using System.Diagnostics;
@@ -38,17 +39,37 @@ public class LoginController : Controller
                     LoginDataTime = DateTime.Now
                };
 
-               var UserLogin = _session.UserLogin(data);
+               //var UserLogin = _session.UserLogin(data);
 
-               if (UserLogin.Status)
+               //if (UserLogin.Status)
+               //{
+               //     LevelStatus status = _session.CheckLevel(UserLogin.SessionKey);
+               //     return RedirectToAction("Index", "Home");
+               //}
+               //else
+               //{
+               //     ModelState.AddModelError("", "Nume de utilizator sau parola incorecta. Va rugam sa incercati din nou!");
+               //}
+               var result = _session.UserLogin(data); // <-- nume clar
+
+               if (result.Status)
                {
-                    LevelStatus status = _session.CheckLevel(UserLogin.SessionKey);
-                    return RedirectToAction("Index", "Home");
+                    // Setăm datele în sesiune
+                    Session["Username"] = result.User.Username;
+                    Session["UserRole"] = result.User.Level.ToString(); // "Admin", "User"
+                    Session["LoginStatus"] = "login";
+
+                    // Redirecționăm după rol
+                    if (result.User.Level == URole.Admin)
+                         return RedirectToAction("Index", "Admin");
+                    else
+                         return RedirectToAction("Index", "Home");
                }
                else
                {
                     ModelState.AddModelError("", "Nume de utilizator sau parola incorecta. Va rugam sa incercati din nou!");
                }
+
           }
 
           return View("~/Views/Login/Login.cshtml");

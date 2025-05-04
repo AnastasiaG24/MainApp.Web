@@ -165,6 +165,7 @@ namespace eUseControl.BusinessLogic.Core
                user.LastIp = data.LoginIp;
                status.Status = true;
                status.StatusMessage = "Autentificare cu succes.";
+               status.SessionKey = user.Username;
                db.SaveChanges();
                return status;
           }
