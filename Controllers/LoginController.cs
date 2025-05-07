@@ -61,8 +61,8 @@ public class LoginController : Controller
                };
 
                var result = _session.UserLogin(data); // <-- nume clar
-            Debug.WriteLine("Status autentificare: " + result.Status);
-            if (result.Status)
+
+               if (result.Status && result.User != null)
                {
 
                 Debug.WriteLine("Autentificare reușită!");
@@ -85,8 +85,7 @@ public class LoginController : Controller
                }
                else
                {
-                Debug.WriteLine("Autentificare eșuată!");
-                ModelState.AddModelError("", "Nume de utilizator sau parola incorecta. Va rugam sa incercati din nou!");
+                    ModelState.AddModelError("", "Nume de utilizator sau parola incorecta. Va rugam sa incercati din nou!");
                }
 
           }
