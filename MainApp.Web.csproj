@@ -232,6 +232,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout_Admin.cshtml" />
+    <Content Include="Views\Admin\ManageUsers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -243,7 +246,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="bin\roslyn\" />
     <Folder Include="Data\" />
-    <Folder Include="Views\Admin\" />
     <Folder Include="Views\ProductDetail\" />
   </ItemGroup>
   <ItemGroup>
