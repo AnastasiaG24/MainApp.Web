@@ -52,7 +52,7 @@ public class LoginController : Controller
                //}
                var result = _session.UserLogin(data); // <-- nume clar
 
-               if (result.Status)
+               if (result.Status && result.User != null)
                {
                     // Setăm datele în sesiune
                     Session["Username"] = result.User.Username;
@@ -68,6 +68,8 @@ public class LoginController : Controller
                else
                {
                     ModelState.AddModelError("", "Nume de utilizator sau parola incorecta. Va rugam sa incercati din nou!");
+                    // Log the error message
+                    Debug.WriteLine($"Login failed for user {login.Credential}: {result.StatusMessage}");
                }
 
           }
@@ -104,7 +106,7 @@ public class LoginController : Controller
                var result = _session.RegisterUser(register);
                if (result)
                {
-                    return RedirectToAction("Index", "Login");
+                    return RedirectToAction("Login", "Login");
                }
                else
                {

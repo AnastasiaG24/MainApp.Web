@@ -166,6 +166,7 @@ namespace eUseControl.BusinessLogic.Core
                status.Status = true;
                status.StatusMessage = "Autentificare cu succes.";
                status.SessionKey = user.Username;
+               status.User = user;
                db.SaveChanges();
                return status;
           }
