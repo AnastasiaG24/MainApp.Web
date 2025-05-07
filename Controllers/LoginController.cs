@@ -25,11 +25,6 @@ public class LoginController : Controller
         }
     }
 
-
-
-
-
-
     private readonly ISession _session;
 
      public LoginController()
@@ -52,33 +47,35 @@ public class LoginController : Controller
      {
           if (ModelState.IsValid)
           {
-               UserLoginData data = new UserLoginData
+            Debug.WriteLine("A intrat în if (ModelState.IsValid)");
+            Debug.WriteLine("Parola introdusă: " + login.Password);
+            Debug.WriteLine("Parola MD5: " + GetMD5Hash(login.Password));
+            Debug.WriteLine("Credential: " + login.Credential);
+
+            UserLoginData data = new UserLoginData
                {
                     Credential = login.Credential,
-                   Password = GetMD5Hash(login.Password),
+                    Password = GetMD5Hash(login.Password),
                     LoginIp = Request.UserHostAddress,
                     LoginDataTime = DateTime.Now
                };
 
-               //var UserLogin = _session.UserLogin(data);
-
-               //if (UserLogin.Status)
-               //{
-               //     LevelStatus status = _session.CheckLevel(UserLogin.SessionKey);
-               //     return RedirectToAction("Index", "Home");
-               //}
-               //else
-               //{
-               //     ModelState.AddModelError("", "Nume de utilizator sau parola incorecta. Va rugam sa incercati din nou!");
-               //}
                var result = _session.UserLogin(data); // <-- nume clar
-
-               if (result.Status)
+            Debug.WriteLine("Status autentificare: " + result.Status);
+            if (result.Status)
                {
-                    // Setăm datele în sesiune
-                    Session["Username"] = result.User.Username;
-                    Session["UserRole"] = result.User.Level.ToString(); // "Admin", "User"
-                    Session["LoginStatus"] = "login";
+
+                Debug.WriteLine("Autentificare reușită!");
+                Debug.WriteLine("Rol utilizator: " + result.User.Level);
+                Debug.WriteLine("Sesiune UserRole: " + Session["UserRole"]);
+                
+
+                // Setăm datele în sesiune
+                Session["Username"] = result.User.Username;
+                Session["UserRole"] = result.User.Level.ToString(); // "Admin", "User"
+                Session["LoginStatus"] = "login";
+
+
 
                     // Redirecționăm după rol
                     if (result.User.Level == URole.Admin)
@@ -88,7 +85,8 @@ public class LoginController : Controller
                }
                else
                {
-                    ModelState.AddModelError("", "Nume de utilizator sau parola incorecta. Va rugam sa incercati din nou!");
+                Debug.WriteLine("Autentificare eșuată!");
+                ModelState.AddModelError("", "Nume de utilizator sau parola incorecta. Va rugam sa incercati din nou!");
                }
 
           }
@@ -109,7 +107,9 @@ public class LoginController : Controller
      {
           if (ModelState.IsValid)
           {
-               if (register.Password != register.ConfirmPassword)
+            
+
+            if (register.Password != register.ConfirmPassword)
                {
                     ModelState.AddModelError("", "Parolele nu coincid.");
                     return View(register);
@@ -125,7 +125,6 @@ public class LoginController : Controller
 
             register.Password = GetMD5Hash(register.Password);
             register.ConfirmPassword = GetMD5Hash(register.ConfirmPassword);
-
 
             var result = _session.RegisterUser(register);
             if (result)
