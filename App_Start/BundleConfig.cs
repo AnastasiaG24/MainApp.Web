@@ -22,6 +22,7 @@ namespace MainApp.Web.App_Start
      "~/Content/Scripts/lib/owlcarousel/owl.carousel.min.js",
      "~/Content/Scripts/lib/lightbox/lightbox.min.js",
      "~/Content/Scripts/main.js"));
+               BundleTable.EnableOptimizations = true;
 
           }
      }

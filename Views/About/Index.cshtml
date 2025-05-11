@@ -4,169 +4,182 @@
      Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-     <!-- Spinner Start -->
-     <!--<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-          <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-               <span class="sr-only">Încărcare...</span>
-          </div>
-     </div>-->
-     <!-- Spinner End -->
-     <!-- About Start -->
-     <div class="container-fluid about py-5">
-          <div class="container py-5">
-               <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                         <div class="h-100" style="border: 50px solid; border-color: transparent #13357B transparent #13357B;">
-                              <img src="img/about1.jpg" class="img-fluid w-100 h-100" alt="">
-                         </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
-                         <h5 class="section-about-title pe-3">Despre noi</h5>
-                         <h1 class="mb-4">Bine ați venit pe site ul <span class="text-primary">AAG - Voyage</span></h1>
-                         <p class="mb-4">Site-ul nostru își propune să faciliteze procesul de rezervare a vacanțelor, să ofere ghiduri turistice, să prezinte recenzii de la alți călători și să ajute utilizatorii să ia cele mai bune decizii în ceea ce privește planificarea călătoriilor. În plus, acesta își dorește să inspire și să motiveze oamenii să exploreze noi culturi, să își depășească limitele și să creeze amintiri deosebite într-un mod simplu și eficient.</p>
+<!-- Spinner Start -->
+<!--<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+     <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Încărcare...</span>
+     </div>
+</div>-->
+<!-- Spinner End -->
+<!-- Breadcrumb Start -->
+<div class="container-fluid bg-breadcrumb">
+     <div class="container text-center">
+          <h1 class="mb-3">Despre noi</h1>
+          <nav aria-label="breadcrumb">
+               <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="/">Acasă</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Despre</li>
+               </ol>
+          </nav>
+     </div>
+</div>
 
-                         <div class="row gy-2 gx-4 mb-4">
-                              <div class="col-sm-6">
-                                   <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Zboruri - clasa întâi</p>
+<!-- Breadcrumb End -->
+<!-- About Start -->
+<div class="container-fluid about py-5">
+     <div class="container py-5">
+          <div class="row g-5 align-items-center">
+               <div class="col-lg-5">
+                    <div class="h-100" style="border: 50px solid; border-color: transparent #13357B transparent #13357B;">
+                         <img src="~/Content/img/about1.jpg" class="img-fluid w-100 h-100" alt="">
+                    </div>
+               </div>
+               <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(~/Content/img/about-img-1.png);">
+                    <h5 class="section-about-title pe-3">Despre noi</h5>
+                    <h1 class="mb-4">Bine ați venit pe site ul <span class="text-primary">AAG - Voyage</span></h1>
+                    <p class="mb-4">Site-ul nostru își propune să faciliteze procesul de rezervare a vacanțelor, să ofere ghiduri turistice, să prezinte recenzii de la alți călători și să ajute utilizatorii să ia cele mai bune decizii în ceea ce privește planificarea călătoriilor. În plus, acesta își dorește să inspire și să motiveze oamenii să exploreze noi culturi, să își depășească limitele și să creeze amintiri deosebite într-un mod simplu și eficient.</p>
+
+                    <div class="row gy-2 gx-4 mb-4">
+                         <div class="col-sm-6">
+                              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Zboruri - clasa întâi</p>
+                         </div>
+                         <div class="col-sm-6">
+                              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Hoteluri de vis </p>
+                         </div>
+                         <div class="col-sm-6">
+                              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Experiențe de 5 stele</p>
+                         </div>
+                         <div class="col-sm-6">
+                              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Automobile închiriere</p>
+                         </div>
+                         <div class="col-sm-6">
+                              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Tururi în jurul orașelor</p>
+                         </div>
+                         <div class="col-sm-6">
+                              <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Serviciu 24/7 </p>
+                         </div>
+                    </div>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Citește mai mult</a>
+               </div>
+          </div>
+     </div>
+</div>
+<!-- About End -->
+<!-- Travel Guide Start -->
+<div class="container-fluid guide py-5">
+     <div class="container py-5">
+          <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+               <h5 class="section-title px-3">Ghid de călătorie</h5>
+               <h1 class="mb-0">Întâlnește ghizii noștri</h1>
+          </div>
+          <div class="row g-4">
+               <div class="col-md-6 col-lg-3">
+                    <div class="guide-item">
+                         <div class="guide-img">
+                              <div class="guide-img-efects">
+                                   <img src="~/Content/img/guide-1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
                               </div>
-                              <div class="col-sm-6">
-                                   <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Hoteluri de vis </p>
-                              </div>
-                              <div class="col-sm-6">
-                                   <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Experiențe de 5 stele</p>
-                              </div>
-                              <div class="col-sm-6">
-                                   <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Automobile închiriere</p>
-                              </div>
-                              <div class="col-sm-6">
-                                   <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Tururi în jurul orașelor</p>
-                              </div>
-                              <div class="col-sm-6">
-                                   <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Serviciu 24/7 </p>
+                              <div class="guide-icon rounded-pill p-2">
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
                               </div>
                          </div>
-                         <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Citește mai mult</a>
+                         <div class="guide-title text-center rounded-bottom p-4">
+                              <div class="guide-title-inner">
+                                   <h4 class="mt-3">Marco</h4>
+                                   <p class="mb-0">Italia</p>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="col-md-6 col-lg-3">
+                    <div class="guide-item">
+                         <div class="guide-img">
+                              <div class="guide-img-efects">
+                                   <img src="~/Content/img/guide-2.jpg" class="img-fluid w-100 rounded-top" alt="Image">
+                              </div>
+                              <div class="guide-icon rounded-pill p-2">
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                              </div>
+                         </div>
+                         <div class="guide-title text-center rounded-bottom p-4">
+                              <div class="guide-title-inner">
+                                   <h4 class="mt-3">Lukas </h4>
+                                   <p class="mb-0">Germania</p>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="col-md-6 col-lg-3">
+                    <div class="guide-item">
+                         <div class="guide-img">
+                              <div class="guide-img-efects">
+                                   <img src="~/Content/img/guide-3.jpg" class="img-fluid w-100 rounded-top" alt="Image">
+                              </div>
+                              <div class="guide-icon rounded-pill p-2">
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                              </div>
+                         </div>
+                         <div class="guide-title text-center rounded-bottom p-4">
+                              <div class="guide-title-inner">
+                                   <h4 class="mt-3">Jari </h4>
+                                   <p class="mb-0">Finlanda</p>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="col-md-6 col-lg-3">
+                    <div class="guide-item">
+                         <div class="guide-img">
+                              <div class="guide-img-efects">
+                                   <img src="~/Content/img/guide-4.jpg" class="img-fluid w-100 rounded-top" alt="Image">
+                              </div>
+                              <div class="guide-icon rounded-pill p-2">
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                   <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                              </div>
+                         </div>
+                         <div class="guide-title text-center rounded-bottom p-4">
+                              <div class="guide-title-inner">
+                                   <h4 class="mt-3">Pierre</h4>
+                                   <p class="mb-0">Franța</p>
+                              </div>
+                         </div>
                     </div>
                </div>
           </div>
      </div>
-     <!-- About End -->
-     <!-- Travel Guide Start -->
-     <div class="container-fluid guide py-5">
-          <div class="container py-5">
-               <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Ghid de călătorie</h5>
-                    <h1 class="mb-0">Întâlnește ghizii noștri</h1>
-               </div>
-               <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                         <div class="guide-item">
-                              <div class="guide-img">
-                                   <div class="guide-img-efects">
-                                        <img src="img/guide-1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                                   </div>
-                                   <div class="guide-icon rounded-pill p-2">
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                   </div>
-                              </div>
-                              <div class="guide-title text-center rounded-bottom p-4">
-                                   <div class="guide-title-inner">
-                                        <h4 class="mt-3">Marco</h4>
-                                        <p class="mb-0">Italia</p>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                         <div class="guide-item">
-                              <div class="guide-img">
-                                   <div class="guide-img-efects">
-                                        <img src="img/guide-2.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                                   </div>
-                                   <div class="guide-icon rounded-pill p-2">
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                   </div>
-                              </div>
-                              <div class="guide-title text-center rounded-bottom p-4">
-                                   <div class="guide-title-inner">
-                                        <h4 class="mt-3">Lukas </h4>
-                                        <p class="mb-0">Germania</p>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                         <div class="guide-item">
-                              <div class="guide-img">
-                                   <div class="guide-img-efects">
-                                        <img src="img/guide-3.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                                   </div>
-                                   <div class="guide-icon rounded-pill p-2">
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                   </div>
-                              </div>
-                              <div class="guide-title text-center rounded-bottom p-4">
-                                   <div class="guide-title-inner">
-                                        <h4 class="mt-3">Jari </h4>
-                                        <p class="mb-0">Finlanda</p>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                         <div class="guide-item">
-                              <div class="guide-img">
-                                   <div class="guide-img-efects">
-                                        <img src="img/guide-4.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                                   </div>
-                                   <div class="guide-icon rounded-pill p-2">
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                        <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                   </div>
-                              </div>
-                              <div class="guide-title text-center rounded-bottom p-4">
-                                   <div class="guide-title-inner">
-                                        <h4 class="mt-3">Pierre</h4>
-                                        <p class="mb-0">Franța</p>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
+</div>
+<!-- Travel Guide End -->
+<!-- Subscribe Start -->
+<div class="container-fluid subscribe py-5">
+     <div class="container text-center py-5">
+          <div class="mx-auto text-center" style="max-width: 900px;">
+               <h5 class="subscribe-title px-3">Abonează-te</h5>
+               <h1 class="text-white mb-4">Newsletter</h1>
+               <p class="text-white mb-5">
+                    Abonează-te la newsletter-ul nostru și fii primul care află despre oferte speciale, noutăți și evenimente exclusive!
+               </p>
+               <div class="position-relative mx-auto">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Abonare</button>
                </div>
           </div>
      </div>
-     <!-- Travel Guide End -->
-     <!-- Subscribe Start -->
-     <div class="container-fluid subscribe py-5">
-          <div class="container text-center py-5">
-               <div class="mx-auto text-center" style="max-width: 900px;">
-                    <h5 class="subscribe-title px-3">Abonează-te</h5>
-                    <h1 class="text-white mb-4">Newsletter</h1>
-                    <p class="text-white mb-5">
-                         Abonează-te la newsletter-ul nostru și fii primul care află despre oferte speciale, noutăți și evenimente exclusive!
-                    </p>
-                    <div class="position-relative mx-auto">
-                         <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                         <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Abonare</button>
-                    </div>
-               </div>
-          </div>
-     </div>
-     <!-- Subscribe End -->
-    
-     <!-- Back to Top -->
-     <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+</div>
+<!-- Subscribe End -->
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
 
