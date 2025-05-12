@@ -1,0 +1,293 @@
+﻿
+@{
+    ViewBag.Title = "Servicii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $(".testimonial-carousel").owlCarousel({
+            items: 3,          // Afișează 3 elemente simultan
+            margin: 20,// Numărul de elemente vizibile la un moment dat
+            autoplay: true,   // Caruselul va rula automat
+            loop: true,       // Caruselul va repeta
+            nav: true,        // Adaugă săgețile de navigare
+            dots: true        // Adaugă punctele de navigare
+        });
+    });
+</script>
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4">
+            Serviciile noastre
+        </h3>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="/">Acasă</a></li>
+            <li class="breadcrumb-item active">Servicii</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Services Start -->
+<div class="container-fluid bg-light service py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Servicii</h5>
+            <h1 class="mb-0">Serviciile noastre</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                            <div class="service-content text-end">
+                                <h5 class="mb-4">Tururi în jurul lumii</h5>
+                                <p class="mb-0">
+                                    Fie că visezi să explorezi marile metropole, să te pierzi în peisaje naturale spectaculoase sau să descoperi culturi și tradiții unice, tururile noastre în jurul lumii îți oferă experiențe de neuitat.
+                                </p>
+                            </div>
+                            <div class="service-icon p-4">
+                                <i class="fa fa-globe fa-4x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
+                            <div class="service-content text-end">
+                                <h5 class="mb-4">Rezervare Hotel</h5>
+                                <p class="mb-0">
+                                    Alege dintre cele mai bune hoteluri, fie că îți dorești lux de 5 stele, o escapadă romantică sau o cazare confortabilă aproape de atracțiile principale. Rezervă rapid și simplu, la cele mai bune prețuri!”
+                                </p>
+                            </div>
+                            <div class="service-icon p-4">
+                                <i class="fa fa-hotel fa-4x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                            <div class="service-content text-end">
+                                <h5 class="mb-4">Ghiduri turistice</h5>
+                                <p class="mb-0">
+                                    Fie că vrei să descoperi atracțiile celebre sau să te aventurezi pe cărări mai puțin cunoscute, ghidurile noastre turistice îți oferă informații detaliate și sugestii utile pentru o experiență de neuitat.
+                                </p>
+                            </div>
+                            <div class="service-icon p-4">
+                                <i class="fa fa-user fa-4x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                            <div class="service-content text-end">
+                                <h5 class="mb-4">Timp organizat</h5>
+                                <p class="mb-0">
+                                    Descoperă destinații uimitoare fără stres! Noi te ajutăm să îți optimizezi timpul, să alegi cele mai bune trasee și să te bucuri de fiecare moment al aventurii tale. Călătorește inteligent și eficient!
+                                </p>
+                            </div>
+                            <div class="service-icon p-4">
+                                <i class="fa fa-cog fa-4x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                            <div class="service-icon p-4">
+                                <i class="fa fa-globe fa-4x text-primary"></i>
+                            </div>
+                            <div class="service-content">
+                                <h5 class="mb-4">Închiriere mașini</h5>
+                                <p class="mb-0">Indiferent dacă plănuiești o vacanță relaxantă sau o escapadă de aventură, avem mașina potrivită pentru tine. Alegi confortul, flexibilitatea și libertatea de a călători oricunde îți dorești.  </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                            <div class="service-icon p-4">
+                                <i class="fa fa-hotel fa-4x text-primary"></i>
+                            </div>
+                            <div class="service-content">
+                                <h5 class="mb-4">Recenziile clienților</h5>
+                                <p class="mb-0">
+                                    Fiecare călătorie este unică, iar recenziile clienților noștri sunt dovada succesului nostru. Află ce spun călătorii care au ales să exploreze alături de noi și lasă-te inspirat de poveștile lor de neuitat!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                            <div class="service-icon p-4">
+                                <i class="fa fa-user fa-4x text-primary"></i>
+                            </div>
+                            <div class="service-content">
+                                <h5 class="mb-4">Blog personal</h5>
+                                <p class="mb-0">
+                                    În fiecare postare vei găsi experiențe personale, recomandări utile și ghiduri detaliate pentru destinații de vis. Vino alături de noi și explorează lumea prin ochii noștri!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                            <div class="service-icon p-4">
+                                <i class="fa fa-cog fa-4x text-primary"></i>
+                            </div>
+                            <div class="service-content">
+                                <h5 class="mb-4">Promoțiile noastre</h5>
+                                <p class="mb-0">
+                                    Fie că e vorba de reduceri exclusive, pachete de vacanță sau oferte de ultim moment, promoțiile noastre îți oferă oportunitatea de a călători la prețuri incredibile. Profită acum și planifică-ți următoarea aventură!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+<!-- Testimonial Start -->
+<div class="container-fluid testimonial py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Recenzii</h5>
+            <h1 class="mb-0">Părerile clienților noștri!!!</h1>
+        </div>
+        <div class="testimonial-carousel owl-carousel">
+            <div class="testimonial-item text-center rounded pb-4">
+                <div class="testimonial-comment bg-light rounded p-4">
+                    <p class="text-center mb-5">
+                        un suport clienți deosebit. Întotdeauna își depășesc așteptările! Voi reveni cu siguranță.
+                    </p>
+                </div>
+                <div class="testimonial-img p-1">
+                    <img src="@Url.Content("~/Content/img/testimonial-1.jpg")" class="img-fluid rounded-circle" alt="Image">
+                </div>
+                <div style="margin-top: -35px;">
+                    <h5 class="mb-0">Ion Popa</h5>
+                    <p class="mb-0">Chișinău, Moldova</p>
+                    <div class="d-flex justify-content-center">
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item text-center rounded pb-4">
+                <div class="testimonial-comment bg-light rounded p-4">
+                    <p class="text-center mb-5">
+                        Un site ușor de navigat și produse de calitate superioară. Întotdeauna o plăcere să colaborez cu voi!
+                    </p>
+                </div>
+                <div class="testimonial-img p-1">
+                    <img src="@Url.Content("~/Content/img/testimonial-2.jpg")" class="img-fluid rounded-circle" alt="Image">
+                </div>
+                <div style="margin-top: -35px;">
+                    <h5 class="mb-0">Maria Ionescu</h5>
+                    <p class="mb-0">Chișinău, Moldova</p>
+                    <div class="d-flex justify-content-center">
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item text-center rounded pb-4">
+                <div class="testimonial-comment bg-light rounded p-4">
+                    <p class="text-center mb-5">
+                        M-am simțit foarte bine tratat, iar experiența de cumpărare a fost extrem de plăcută. Mulțumesc pentru atenția la detalii!
+                    </p>
+                </div>
+                <div class="testimonial-img p-1">
+                    <img src="@Url.Content("~/Content/img/testimonial-3.jpg")" class="img-fluid rounded-circle" alt="Image">
+                </div>
+                <div style="margin-top: -35px;">
+                    <h5 class="mb-0">Vanessa Cazacu</h5>
+                    <p class="mb-0">Chișinău, Moldova</p>
+                    <div class="d-flex justify-content-center">
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item text-center rounded pb-4">
+                <div class="testimonial-comment bg-light rounded p-4">
+                    <p class="text-center mb-5">
+                        Un serviciu excelent! Am fost impresionat de profesionalismul echipei și de rapiditatea livrării. Recomand cu încredere!
+                    </p>
+                </div>
+                <div class="testimonial-img p-1">
+                    <img src="@Url.Content("~/Content/img/testimonial-4.jpg")" class="img-fluid rounded-circle" alt="Image">
+                </div>
+                <div style="margin-top: -35px;">
+                    <h5 class="mb-0">Elena Toma</h5>
+                    <p class="mb-0">Chișinău, Moldova</p>
+                    <div class="d-flex justify-content-center">
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+<!-- Subscribe Start -->
+<div class="container-fluid subscribe py-5">
+    <div class="container text-center py-5">
+        <div class="mx-auto text-center" style="max-width: 900px;">
+            <h5 class="subscribe-title px-3">Abonează-te</h5>
+            <h1 class="text-white mb-4">Newsletter</h1>
+            <p class="text-white mb-5">
+                Abonează-te la newsletter-ul nostru și fii primul care află despre oferte speciale, noutăți și evenimente exclusive!
+            </p>
+            <div class="position-relative mx-auto">
+                <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Abonare</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Subscribe End -->
+<!-- Copyright Start -->
+<div class="container-fluid copyright text-body py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-end mb-md-0">
+                <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">AAG - Voyage</a>, All right reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                Designed By <a class="text-white" href="https://htmlcodex.com">HTML Codex</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+
