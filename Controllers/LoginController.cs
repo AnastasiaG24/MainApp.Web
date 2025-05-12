@@ -64,7 +64,7 @@ public class LoginController : Controller
 
                if (result.Status && result.User != null)
                {
-
+                
                 Debug.WriteLine("Autentificare reușită!");
                 Debug.WriteLine("Rol utilizator: " + result.User.Level);
                 Debug.WriteLine("Sesiune UserRole: " + Session["UserRole"]);
