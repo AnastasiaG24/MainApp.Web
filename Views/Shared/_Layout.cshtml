@@ -51,6 +51,7 @@
      <footer id="footer">
           @Html.Partial("_Footer")
      </footer>
-
+     @Scripts.Render("~/bundles/template-js")
+     @RenderSection("Scripts", required: false)
 </body>
 </html>
