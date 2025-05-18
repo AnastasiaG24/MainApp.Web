@@ -1,0 +1,43 @@
+﻿@model eUseControl.Domain.Entities.Rezervare
+
+@{
+    ViewBag.Title = "Rezervare";
+    Layout = "~/Views/Shared/_RezervareLayout.cshtml"; // Vezi pasul 2
+}
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4">Formular de rezervare</h2>
+
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "card p-4 shadow-sm" }))
+            {
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Nume, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Nume, new { @class = "form-control", placeholder = "Introduceți numele complet" })
+                    @Html.ValidationMessageFor(m => m.Nume, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Email, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "exemplu@email.com" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Destinatie, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Destinatie, new { @class = "form-control", placeholder = "Destinația dorită" })
+                    @Html.ValidationMessageFor(m => m.Destinatie, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.DataPlecare, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.DataPlecare, new { @class = "form-control", type = "date" })
+                    @Html.ValidationMessageFor(m => m.DataPlecare, "", new { @class = "text-danger" })
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Trimite rezervarea</button>
+            }
+        </div>
+    </div>
+</div>

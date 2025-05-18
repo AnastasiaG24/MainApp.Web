@@ -62,6 +62,10 @@
     <Compile Include="Migrations\202505182014530_InitialCreate.Designer.cs">
       <DependentUpon>202505182014530_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505182156158_AdaugaTabelaRezervari.cs" />
+    <Compile Include="Migrations\202505182156158_AdaugaTabelaRezervari.Designer.cs">
+      <DependentUpon>202505182156158_AdaugaTabelaRezervari.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +91,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202505182014530_InitialCreate.resx">
       <DependentUpon>202505182014530_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505182156158_AdaugaTabelaRezervari.resx">
+      <DependentUpon>202505182156158_AdaugaTabelaRezervari.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
