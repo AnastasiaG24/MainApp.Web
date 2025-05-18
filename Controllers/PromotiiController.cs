@@ -8,7 +8,11 @@ namespace MainApp.Web.Controllers
 {
     public class PromotiiController : Controller
     {
-        // GET: Promotii
+        public ActionResult Index()
+        {
+            return RedirectToAction("Index_Promotii");
+        }
+
         public ActionResult Index_Promotii()
         {
             return View();

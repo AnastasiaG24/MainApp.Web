@@ -37,7 +37,12 @@ namespace MainApp.Web
                     url: "{controller}/{action}/{id}",
                     defaults: new { controller = "Promotii", action = "Index_Promotii", id = UrlParameter.Optional }
                 );
-          }
+                routes.MapRoute(
+                    name: "Blog",
+                    url: "{controller}/{action}/{id}",
+                    defaults: new { controller = "Blog", action = "Index", id = UrlParameter.Optional }
+                );
+        }
 
      }
 }
