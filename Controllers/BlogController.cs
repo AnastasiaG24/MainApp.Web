@@ -6,14 +6,10 @@ using System.Web.Mvc;
 
 namespace MainApp.Web.Controllers
 {
-    public class PromotiiController : Controller
+    public class BlogController : Controller
     {
+        // GET: Blog
         public ActionResult Index()
-        {
-            return RedirectToAction("Index_Promotii");
-        }
-
-        public ActionResult Index_Promotii()
         {
             return View();
         }
