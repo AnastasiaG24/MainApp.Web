@@ -42,7 +42,12 @@ namespace MainApp.Web
                     url: "{controller}/{action}/{id}",
                     defaults: new { controller = "Blog", action = "Index", id = UrlParameter.Optional }
                 );
-        }
+               routes.MapRoute(
+                    name: "Destinatie",
+                    url: "{controller}/{action}/{id}",
+                    defaults: new { controller = "Pagini", action = "Index_Destinatie", id = UrlParameter.Optional }
+                );
+          }
 
      }
 }

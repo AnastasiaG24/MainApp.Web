@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace MainApp.Web.Controllers
+{
+    public class PaginiController : Controller
+    {
+        // GET: Pagini
+        public ActionResult Index_Destinatie()
+        {
+            return View();
+        }
+    }
+}
