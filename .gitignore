@@ -366,6 +366,3 @@ App.config
 Web.config
 
 Migrations/
-/Web.config
-/Web.Debug.config
-/Web.Release.config
