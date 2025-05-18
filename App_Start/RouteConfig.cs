@@ -27,6 +27,11 @@ namespace MainApp.Web
                     url: "{controller}/{action}/{id}",
                     defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional }
                 );
-        }
+               routes.MapRoute(
+                    name: "Promotii",
+                    url: "{controller}/{action}/{id}",
+                    defaults: new { controller = "Promotii", action = "Index_Promotii", id = UrlParameter.Optional }
+                );
+          }
      }
 }

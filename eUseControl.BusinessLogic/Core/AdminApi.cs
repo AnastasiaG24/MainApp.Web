@@ -130,7 +130,7 @@ namespace eUseControl.BusinessLogic.Core
                var newUser = new UserDbTable
                {
                     Credential = register.Credential,
-                    Password = register.Password, // TODO hash the password
+                    Password = register.Password,
                     Email = register.Email,
                     Country = register.Country,
                     CreatedAt = DateTime.Now
