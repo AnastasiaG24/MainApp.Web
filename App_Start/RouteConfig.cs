@@ -22,16 +22,23 @@ namespace MainApp.Web
                    defaults: new { controller = "About", action = "Index_About", id = UrlParameter.Optional }
 
                );
-                routes.MapRoute(
-                    name: "Contact",
-                    url: "{controller}/{action}/{id}",
-                    defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional }
-                );
-                routes.MapRoute(
-                   name: "Services",
-                   url: "Services/{action}/{id}",
-                   defaults: new { controller = "Servicii", action = "Index", id = UrlParameter.Optional }
+               routes.MapRoute(
+                   name: "Contact",
+                   url: "{controller}/{action}/{id}",
+                   defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional }
                );
-        }
+               routes.MapRoute(
+                  name: "Services",
+                  url: "Services/{action}/{id}",
+                  defaults: new { controller = "Servicii", action = "Index", id = UrlParameter.Optional }
+              );
+               routes.MapRoute(
+                    name: "Promotii",
+                    url: "{controller}/{action}/{id}",
+                    defaults: new { controller = "Promotii", action = "Index_Promotii", id = UrlParameter.Optional }
+                );
+          }
+
      }
 }
+

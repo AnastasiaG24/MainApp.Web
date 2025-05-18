@@ -86,33 +86,25 @@
 
      // testimonial carousel
      $(".testimonial-carousel").owlCarousel({
-          autoplay: true,
-          smartSpeed: 1000,
-          center: true,
-          dots: true,
-          loop: true,
+          items: 1,
           margin: 25,
+          autoplay: true,
+          loop: true,
           nav: true,
+          dots: true,
           navText: [
-               '<i class="bi bi-arrow-left"></i>',
-               '<i class="bi bi-arrow-right"></i>'
+               '<i class="fas fa-arrow-left"></i>',
+               '<i class="fas fa-arrow-right"></i>'
           ],
           responsiveClass: true,
           responsive: {
-               0: {
-                    items: 1
-               },
-               768: {
-                    items: 2
-               },
-               992: {
-                    items: 2
-               },
-               1200: {
-                    items: 3
-               }
+               0: { items: 1 },
+               768: { items: 2 },
+               992: { items: 2 },
+               1200: { items: 3 }
           }
      });
+
 
 
      // Back to top button
