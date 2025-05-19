@@ -1,7 +1,77 @@
 ﻿@{
-    ViewBag.Title = "Confirmare";
-    Layout = null;
+    ViewBag.Title = "Rezervare Confirmată";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Rezervarea a fost trimisă!</h2>
-<p>Vă mulțumim, vom reveni cu un email de confirmare.</p>
+<style>
+    body {
+        background-color: #cfd8e6;
+    }
+
+    .confirmare-wrapper {
+        min-height: 75vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .confirmare-card {
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 3rem;
+        text-align: center;
+        max-width: 550px;
+        width: 100%;
+    }
+
+    .confirmare-icon {
+        font-size: 3rem;
+    }
+
+    .confirmare-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #198754; /* verde Bootstrap */
+        margin-top: 1rem;
+    }
+
+    .confirmare-text {
+        font-size: 1.05rem;
+        color: #333;
+        margin-bottom: 2rem;
+    }
+
+        .confirmare-text strong {
+            font-size: 1.2rem;
+            color: #003366; /* un albastru închis pentru AAG - Voyage */
+        }
+
+    .btn-home {
+        font-size: 1.1rem;
+        padding: 0.6rem 2rem;
+        border-radius: 30px;
+        border: 2px solid #198754;
+        color: #198754;
+        background-color: transparent;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .btn-home:hover {
+            background-color: #198754;
+            color: #fff;
+        }
+</style>
+
+<div class="container confirmare-wrapper">
+    <div class="confirmare-card">
+        <div class="confirmare-icon">🎉</div>
+        <div class="confirmare-title">Rezervarea a fost trimisă!</div>
+        <p class="confirmare-text">
+            Vă mulțumim că ați ales <strong>AAG - Voyage</strong>.<br />
+            Veți primi un email de confirmare cu toate detaliile călătoriei.
+        </p>
+        <a href="@Url.Action("Index", "Home")" class="btn-home">⬅ Înapoi la pagina principală</a>
+    </div>
+</div>
