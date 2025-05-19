@@ -1,17 +1,57 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "Călătorie - Munți";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    body {
+        background-color: #cfd8e6; 
+    }
 
-<!DOCTYPE html>
+    .munti-container {
+        padding: 5rem 1rem 3rem;
+        text-align: center;
+        color: #002f6c;
+    }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Munti</title>
-</head>
-<body>
-    <div> 
+    .munti-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #002f6c;
+        margin-top: 2rem;
+    }
+
+    .munti-date {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        color: #444;
+    }
+
+    .munti-image {
+        margin-top: 2.5rem;
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .munti-text {
+        max-width: 850px;
+        margin: 3rem auto 0;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: #333;
+    }
+</style>
+
+<div class="munti-container">
+    <h1 class="munti-title">Călătorie - Munți</h1>
+    <p class="munti-date">Postat de Giovanni Rossi · 8 feb 2025</p>
+
+    <img src="@Url.Content("~/Content/img/blog-2.jpg")" alt="Munți" class="munti-image" />
+
+    <div class="munti-text">
+        <p>Călătoria în munți este o experiență profundă ce te conectează cu natura.</p>
+        <p>Aerul curat, liniștea și peisajele spectaculoase îți oferă o oportunitate rară de relaxare și reflecție.</p>
+        <p>Fie că alegi drumeții, camping sau escaladă, munții îți oferă un refugiu față de agitația cotidiană.</p>
     </div>
-</body>
-</html>
+</div>

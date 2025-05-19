@@ -1,17 +1,57 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "Călătorie - Mare";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    body {
+        background-color: #cfd8e6; /* păstrăm același fundal ca la munți pentru uniformitate */
+    }
 
-<!DOCTYPE html>
+    .mare-container {
+        padding: 5rem 1rem 3rem;
+        text-align: center;
+        color: #002f6c;
+    }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Mare</title>
-</head>
-<body>
-    <div> 
+    .mare-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #002f6c;
+        margin-top: 2rem;
+    }
+
+    .mare-date {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        color: #444;
+    }
+
+    .mare-image {
+        margin-top: 2.5rem;
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .mare-text {
+        max-width: 850px;
+        margin: 3rem auto 0;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: #333;
+    }
+</style>
+
+<div class="mare-container">
+    <h1 class="mare-title">Călătorie - Mare</h1>
+    <p class="mare-date">Postat de Claire Dupont · 5 dec 2024</p>
+
+    <img src="@Url.Content("~/Content/img/blog-3.jpg")" alt="Mare" class="mare-image" />
+
+    <div class="mare-text">
+        <p>O călătorie la mare este un refugiu perfect pentru sufletul oricărui călător în căutarea liniștii.</p>
+        <p>Sunetul valurilor, briza și apusurile te încarcă cu emoții pozitive.</p>
+        <p>Marea este locul ideal pentru relaxare, regăsire și momente de neuitat alături de cei dragi.</p>
     </div>
-</body>
-</html>
+</div>
