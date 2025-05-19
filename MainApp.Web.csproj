@@ -262,6 +262,7 @@
     <Content Include="Views\Blog\Aventura.cshtml" />
     <Content Include="Views\Blog\Mare.cshtml" />
     <Content Include="Views\Blog\Munti.cshtml" />
+    <Content Include="Views\Pagini\Rezerveaza_calatorie.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

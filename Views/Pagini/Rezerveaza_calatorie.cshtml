@@ -1,0 +1,135 @@
+﻿
+@{
+     ViewBag.Title = "Rezerveaza_calatorie";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+     <!-- Spinner Start -->
+     <!--<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+          <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+               <span class="sr-only">Încărcare...</span>
+          </div>
+     </div>-->
+     <!-- Spinner End -->
+     
+     <!-- Header Start -->
+     <div class="container-fluid bg-breadcrumb">
+          <div class="container text-center py-5" style="max-width: 900px;">
+               <h3 class="text-white display-3 mb-4">
+                    Rezervează online</h1>
+                    <ol class="breadcrumb justify-content-center mb-0">
+                         <li class="breadcrumb-item"><a href="index.html">Acasă</a></li>
+                         <li class="breadcrumb-item"><a href="#">Pagini</a></li>
+                         <li class="breadcrumb-item active text-white">Rezervează online</li>
+                    </ol>
+          </div>
+     </div>
+     <!-- Header End -->
+     <!-- Tour Booking Start -->
+     <div class="container-fluid booking py-5">
+          <div class="container py-5">
+               <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                         <h5 class="section-booking-title pe-3">Rezervare</h5>
+                         <h1 class="text-white mb-4">Rezervează online</h1>
+                         <p class="text-white mb-4">
+                              Planifică-ți vacanța fără griji! Cu doar câteva click-uri, poți rezerva cele mai bune hoteluri, zboruri și experiențe de neuitat.
+                         </p>
+                         <p class="text-white mb-4">
+                              * Cazare la cele mai bune prețuri <br />
+                              * Zboruri convenabile către destinația dorită<br />
+                              * Excursii și activități personalizate<br />
+                              * Suport 24/7 pentru o călătorie fără stres<br />
+                              * Rezervă acum și pornește în aventura vieții tale!<br />
+                         </p>
+                         <a href="#" class="btn btn-light text-primary rounded-pill py-3 px-5 mt-2">Citește mai mult</a>
+                    </div>
+                    <div class="col-lg-6">
+                         <h1 class="text-white mb-3">Rezervă un Tur – Oferte Speciale!</h1>
+                         <p class="text-white mb-4">Primește <span class="text-warning">50% reducere</span> la prima ta călătorie împreună cu AAG - Voyage!</p>
+                         <form>
+                              <div class="row g-3">
+                                   <div class="col-md-6">
+                                        <div class="form-floating">
+                                             <input type="text" class="form-control bg-white border-0" id="name" placeholder="Your Name">
+                                             <label for="name">Nume</label>
+                                        </div>
+                                   </div>
+                                   <div class="col-md-6">
+                                        <div class="form-floating">
+                                             <input type="email" class="form-control bg-white border-0" id="email" placeholder="Your Email">
+                                             <label for="email">E-mail</label>
+                                        </div>
+                                   </div>
+                                   <div class="col-md-6">
+                                        <div class="form-floating date" id="date3" data-target-input="nearest">
+                                             <input type="text" class="form-control bg-white border-0" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                             <label for="datetime">Data & Timp</label>
+                                        </div>
+                                   </div>
+                                   <div class="col-md-6">
+                                        <div class="form-floating">
+                                             <select class="form-select bg-white border-0" id="select1">
+                                                  <option value="1">Destinația </option>
+                                                  <option value="2">Destinația </option>
+                                                  <option value="3">Destinația </option>
+                                             </select>
+                                             <label for="select1">Destinație</label>
+                                        </div>
+                                   </div>
+                                   <div class="col-md-6">
+                                        <div class="form-floating">
+                                             <select class="form-select bg-white border-0" id="SelectPerson">
+                                                  <option value="1">Persoane </option>
+                                                  <option value="2">Persoane </option>
+                                                  <option value="3">Persoane </option>
+                                             </select>
+                                             <label for="SelectPerson">Persoane</label>
+                                        </div>
+                                   </div>
+                                   <div class="col-md-6">
+                                        <div class="form-floating">
+                                             <select class="form-select bg-white border-0" id="CategoriesSelect">
+                                                  <option value="1">Copii</option>
+                                                  <option value="2">1</option>
+                                                  <option value="3">2</option>
+                                                  <option value="3">3</option>
+                                             </select>
+                                             <label for="CategoriesSelect">Categorii</label>
+                                        </div>
+                                   </div>
+                                   <div class="col-12">
+                                        <div class="form-floating">
+                                             <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                             <label for="message">Cerere specială</label>
+                                        </div>
+                                   </div>
+                                   <div class="col-12">
+                                        <button class="btn btn-primary text-white w-100 py-3" type="submit">Rezervează acum</button>
+                                   </div>
+                              </div>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <!-- Tour Booking End -->
+     <!-- Subscribe Start -->
+     <div class="container-fluid subscribe py-5">
+          <div class="container text-center py-5">
+               <div class="mx-auto text-center" style="max-width: 900px;">
+                    <h5 class="subscribe-title px-3">Abonează-te</h5>
+                    <h1 class="text-white mb-4">Newsletter</h1>
+                    <p class="text-white mb-5">
+                         Abonează-te la newsletter-ul nostru și fii primul care află despre oferte speciale, noutăți și evenimente exclusive!
+                    </p>
+                    <div class="position-relative mx-auto">
+                         <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                         <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Abonare</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <!-- Subscribe End -->
+     

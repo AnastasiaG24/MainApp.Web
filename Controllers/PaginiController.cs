@@ -33,5 +33,9 @@ namespace MainApp.Web.Controllers
         {
             return View();
         }
+          public ActionResult Rezerveaza_calatorie()
+          {
+               return View();
+          }
     }
 }

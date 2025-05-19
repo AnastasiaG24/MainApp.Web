@@ -72,7 +72,12 @@ namespace MainApp.Web
                   url: "{controller}/{action}/{id}",
                   defaults: new { controller = "Pagini", action = "Eroare", id = UrlParameter.Optional }
               );
-        }
+               routes.MapRoute(
+                  name: "Rezerveaza_calatorie",
+                  url: "{controller}/{action}/{id}",
+                  defaults: new { controller = "Pagini", action = "Rezerveaza_calatorie", id = UrlParameter.Optional }
+              );
+          }
 
      }
 }
