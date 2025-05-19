@@ -60,7 +60,12 @@ namespace MainApp.Web
                 routes.MapRoute(
                    name: "Ghid",
                    url: "{controller}/{action}/{id}",
-                   defaults: new { controller = "Pagini", action = "Galerie", id = UrlParameter.Optional }
+                   defaults: new { controller = "Pagini", action = "Ghid", id = UrlParameter.Optional }
+               );
+            routes.MapRoute(
+                   name: "Recenzii",
+                   url: "{controller}/{action}/{id}",
+                   defaults: new { controller = "Pagini", action = "Recenzii", id = UrlParameter.Optional }
                );
         }
 

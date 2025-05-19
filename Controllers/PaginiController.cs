@@ -25,5 +25,9 @@ namespace MainApp.Web.Controllers
         {
             return View();
         }
+        public ActionResult Recenzii()
+        {
+            return View();
+        }
     }
 }
