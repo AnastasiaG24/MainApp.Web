@@ -52,7 +52,12 @@ namespace MainApp.Web
                     url: "{controller}/{action}/{id}",
                     defaults: new { controller = "Pagini", action = "Explorare", id = UrlParameter.Optional }
                 );
-          }
+                routes.MapRoute(
+                    name: "Galerie",
+                    url: "{controller}/{action}/{id}",
+                    defaults: new { controller = "Pagini", action = "Galerie", id = UrlParameter.Optional }
+                );
+        }
 
      }
 }

@@ -17,5 +17,9 @@ namespace MainApp.Web.Controllers
           {
                return View();
           }
-     }
+        public ActionResult Galerie()
+        {
+            return View();
+        }
+    }
 }
