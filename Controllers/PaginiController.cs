@@ -13,5 +13,9 @@ namespace MainApp.Web.Controllers
         {
             return View();
         }
-    }
+          public ActionResult Explorare()
+          {
+               return View();
+          }
+     }
 }

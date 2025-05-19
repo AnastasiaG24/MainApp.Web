@@ -255,6 +255,7 @@
     <Content Include="Views\ProductDetail\Oferta.cshtml" />
     <Content Include="Views\Rezervare\OfertaRezervare.cshtml" />
     <Content Include="Views\Rezervare\Confirmare_rezervare.cshtml" />
+    <Content Include="Views\Pagini\Explorare.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

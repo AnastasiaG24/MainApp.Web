@@ -47,6 +47,11 @@ namespace MainApp.Web
                     url: "{controller}/{action}/{id}",
                     defaults: new { controller = "Pagini", action = "Destinatie", id = UrlParameter.Optional }
                 );
+               routes.MapRoute(
+                    name: "Explorare",
+                    url: "{controller}/{action}/{id}",
+                    defaults: new { controller = "Pagini", action = "Explorare", id = UrlParameter.Optional }
+                );
           }
 
      }
