@@ -259,6 +259,7 @@
     <Content Include="Views\Pagini\Galerie.cshtml" />
     <Content Include="Views\Pagini\Ghid.cshtml" />
     <Content Include="Views\Pagini\Recenzii.cshtml" />
+    <Content Include="Views\Pagini\Eroare.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

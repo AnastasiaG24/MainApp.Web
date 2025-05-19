@@ -62,11 +62,16 @@ namespace MainApp.Web
                    url: "{controller}/{action}/{id}",
                    defaults: new { controller = "Pagini", action = "Ghid", id = UrlParameter.Optional }
                );
-            routes.MapRoute(
+                routes.MapRoute(
                    name: "Recenzii",
                    url: "{controller}/{action}/{id}",
                    defaults: new { controller = "Pagini", action = "Recenzii", id = UrlParameter.Optional }
                );
+            routes.MapRoute(
+                  name: "Eroare",
+                  url: "{controller}/{action}/{id}",
+                  defaults: new { controller = "Pagini", action = "Eroare", id = UrlParameter.Optional }
+              );
         }
 
      }
