@@ -57,6 +57,11 @@ namespace MainApp.Web
                     url: "{controller}/{action}/{id}",
                     defaults: new { controller = "Pagini", action = "Galerie", id = UrlParameter.Optional }
                 );
+                routes.MapRoute(
+                   name: "Ghid",
+                   url: "{controller}/{action}/{id}",
+                   defaults: new { controller = "Pagini", action = "Galerie", id = UrlParameter.Optional }
+               );
         }
 
      }

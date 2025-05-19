@@ -21,5 +21,9 @@ namespace MainApp.Web.Controllers
         {
             return View();
         }
+        public ActionResult Ghid()
+        {
+            return View();
+        }
     }
 }
