@@ -33,5 +33,40 @@ namespace MainApp.Web.Controllers
         {
             return View();
         }
+
+
+        public ActionResult OfertaRezervare(string destinatie)
+        {
+            ViewBag.Destinatie = destinatie;
+
+            switch (destinatie?.ToLower())
+            {
+                case "venetia":
+                    ViewBag.Titlu = "Veneția - Italia";
+                    ViewBag.Pret = "$349.00";
+                    ViewBag.Zile = "3 zile";
+                    break;
+                case "montblanc":
+                    ViewBag.Titlu = "Mont Blanc - Franța";
+                    ViewBag.Pret = "$479.00";
+                    ViewBag.Zile = "4 zile";
+                    break;
+                case "kyoto":
+                    ViewBag.Titlu = "Kyoto - Japonia";
+                    ViewBag.Pret = "$549.00";
+                    ViewBag.Zile = "3 zile";
+                    break;
+                case "thailanda":
+                    ViewBag.Titlu = "Thailanda";
+                    ViewBag.Pret = "$649.00";
+                    ViewBag.Zile = "2 zile";
+                    break;
+                default:
+                    return HttpNotFound("Oferta nu există.");
+            }
+
+            return View();
+        }
+
     }
 }

@@ -252,6 +252,8 @@
     <Content Include="Views\Rezervare\Confirmare.cshtml" />
     <Content Include="Views\Shared\_RezervareLayout.cshtml" />
     <Content Include="Views\Pagini\Destinatie.cshtml" />
+    <Content Include="Views\ProductDetail\Oferta.cshtml" />
+    <Content Include="Views\Rezervare\OfertaRezervare.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -263,7 +265,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="bin\roslyn\" />
     <Folder Include="Data\" />
-    <Folder Include="Views\ProductDetail\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="eUseControl.BusinessLogic\eUseControl.BusinessLogic.csproj">

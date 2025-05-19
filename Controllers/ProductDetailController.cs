@@ -26,6 +26,42 @@ namespace MainApp.Web.Controllers
                eUseControl.Domain.Entities.Product.Ofert ofert = _userOfert.GetOfertById(id);
                return View();
           }
-     }
+
+        public ActionResult Oferta(string destinatie)
+        {
+            ViewBag.Destinatie = destinatie;
+            switch (destinatie?.ToLower())
+            {
+                case "venetia":
+                    ViewBag.Titlu = "Veneția - Italia";
+                    ViewBag.Descriere = "Descoperă farmecul romantic al Veneției!";
+                    ViewBag.Pret = "$349.00";
+                    ViewBag.Zile = 3;
+                    break;
+                case "montblanc":
+                    ViewBag.Titlu = "Mont Blanc - Franța";
+                    ViewBag.Descriere = "O aventură alpină de neuitat!";
+                    ViewBag.Pret = "$479.00";
+                    ViewBag.Zile = 4;
+                    break;
+                case "kyoto":
+                    ViewBag.Titlu = "Kyoto - Japonia";
+                    ViewBag.Descriere = "Explorați templele și grădinile japoneze!";
+                    ViewBag.Pret = "$549.00";
+                    ViewBag.Zile = 3;
+                    break;
+                case "thailanda":
+                    ViewBag.Titlu = "Thailanda";
+                    ViewBag.Descriere = "Plaje tropicale și gastronomie exotică!";
+                    ViewBag.Pret = "$649.00";
+                    ViewBag.Zile = 2;
+                    break;
+                default:
+                    return HttpNotFound("Destinația nu a fost găsită.");
+            }
+
+            return View();
+        }
+    }
 
 }

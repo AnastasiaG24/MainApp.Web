@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = ViewBag.Titlu;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@functions {
+    public string GetImagePath(string destinatie)
+    {
+        switch ((destinatie ?? "").ToLower())
+        {
+            case "venetia": return "~/Content/img/packages-4.jpg";
+            case "montblanc": return "~/Content/img/packages-2.jpg";
+            case "kyoto": return "~/Content/img/packages-3.jpg";
+            case "thailanda": return "~/Content/img/packages-1.jpg";
+            default: return "~/Content/img/default.jpg";
+        }
+    }
+}
+<style>
+    body {
+        background-color: #e0e5ec !important; /* Fundal mai închis decât #f4f7fa */
+    }
+
+    .navbar-brand {
+        color: white !important;
+    }
+</style>
+<!-- Spațiu între header și conținut -->
+<div class="container py-5" style="min-height: 10vh;"></div>
+
+    <!-- Secțiune de ofertă -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="@Url.Content(GetImagePath(ViewBag.Destinatie))" class="img-fluid h-100 w-100 object-fit-cover" alt="Imagine ofertă" style="object-fit: cover; min-height: 100%;">
+                        </div>
+                        <div class="col-md-6 bg-white d-flex flex-column">
+                            <div class="card-body p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                                <div>
+                                    <h2 class="card-title text-primary">@ViewBag.Titlu</h2>
+                                    <p class="card-text">@ViewBag.Descriere</p>
+                                    <ul class="list-group list-group-flush mb-4">
+                                        <li class="list-group-item"><strong>Preț:</strong> <span class="text-success">@ViewBag.Pret</span></li>
+                                        <li class="list-group-item"><strong>Durată:</strong> @ViewBag.Zile zile</li>
+                                        <li class="list-group-item"><strong>Persoane:</strong> 2 persoane</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="@Url.Action("OfertaRezervare", "Rezervare", new { destinatie = ViewBag.Destinatie })" class="btn btn-outline-primary btn-lg w-100 rounded-pill">
+                                        Rezervă această ofertă
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
