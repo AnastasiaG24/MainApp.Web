@@ -254,7 +254,6 @@
     <Content Include="Views\Pagini\Destinatie.cshtml" />
     <Content Include="Views\ProductDetail\Oferta.cshtml" />
     <Content Include="Views\Rezervare\OfertaRezervare.cshtml" />
-    <Content Include="Views\Rezervare\Confirmare_rezervare.cshtml" />
     <Content Include="Views\Pagini\Explorare.cshtml" />
     <Content Include="Views\Pagini\Galerie.cshtml" />
     <Content Include="Views\Pagini\Ghid.cshtml" />
