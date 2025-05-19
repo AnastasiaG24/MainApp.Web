@@ -363,6 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 App.config
-MainApp/Web.config
-
-eUseControl.BussinesLogic/Migrations
+MainApp.Web/Web.config
+eUseControl.BussinesLogic/Migrations/
