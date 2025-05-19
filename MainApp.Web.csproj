@@ -251,7 +251,7 @@
     <Content Include="Views\Rezervare\Index.cshtml" />
     <Content Include="Views\Rezervare\Confirmare.cshtml" />
     <Content Include="Views\Shared\_RezervareLayout.cshtml" />
-    <Content Include="Views\Pagini\Index_Destinatie.cshtml" />
+    <Content Include="Views\Pagini\Destinatie.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

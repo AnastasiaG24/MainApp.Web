@@ -9,7 +9,7 @@ namespace MainApp.Web.Controllers
     public class PaginiController : Controller
     {
         // GET: Pagini
-        public ActionResult Index_Destinatie()
+        public ActionResult Destinatie()
         {
             return View();
         }
