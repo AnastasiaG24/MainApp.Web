@@ -34,7 +34,6 @@ namespace MainApp.Web.Controllers
             return View();
         }
 
-
         public ActionResult OfertaRezervare(string destinatie)
         {
             ViewBag.Destinatie = destinatie;

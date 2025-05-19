@@ -1265,3 +1265,15 @@
      background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
+/*** Dropdown fix ***/
+select, .form-control, .form-select {
+     appearance: auto;
+     -webkit-appearance: auto;
+     -moz-appearance: auto;
+     padding: 10px;
+     border-radius: 5px;
+     border: 1px solid #ccc;
+     background-color: white;
+}
+/*** Dropdown fix end ***/
