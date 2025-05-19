@@ -11,6 +11,7 @@ namespace eUseControl.BusinessLogic.DBModel
           public virtual DbSet<UserDbTable> Users { get; set; }
           public virtual DbSet<Ofert> Oferts { get; set; }
           public DbSet<Rezervare> Rezervari { get; set; }
+          public DbSet<RezervareOferta> RezervariOferte { get; set; }
     }
 }
 

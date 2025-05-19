@@ -66,6 +66,14 @@
     <Compile Include="Migrations\202505190833108_AdaugaRezervare.Designer.cs">
       <DependentUpon>202505190833108_AdaugaRezervare.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505190933550_AdaugaRezervareOferta.cs" />
+    <Compile Include="Migrations\202505190933550_AdaugaRezervareOferta.Designer.cs">
+      <DependentUpon>202505190933550_AdaugaRezervareOferta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505190944194_UpdateRezervareOferta.cs" />
+    <Compile Include="Migrations\202505190944194_UpdateRezervareOferta.Designer.cs">
+      <DependentUpon>202505190944194_UpdateRezervareOferta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505190833108_AdaugaRezervare.resx">
       <DependentUpon>202505190833108_AdaugaRezervare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505190933550_AdaugaRezervareOferta.resx">
+      <DependentUpon>202505190933550_AdaugaRezervareOferta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505190944194_UpdateRezervareOferta.resx">
+      <DependentUpon>202505190944194_UpdateRezervareOferta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
