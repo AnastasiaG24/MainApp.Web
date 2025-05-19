@@ -13,5 +13,19 @@ namespace MainApp.Web.Controllers
         {
             return View();
         }
+        public ActionResult Aventura()
+        {
+            return View();
+        }
+
+        public ActionResult Munti()
+        {
+            return View();
+        }
+
+        public ActionResult Mare()
+        {
+            return View();
+        }
     }
 }

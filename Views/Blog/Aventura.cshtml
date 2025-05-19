@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Călătorie - Aventură";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background-color: #e0e9f7; /* fundal albastru puțin mai închis */
+    }
+
+    .aventura-container {
+        padding: 5rem 1rem 3rem;
+        text-align: center;
+        color: #002f6c;
+    }
+
+    .aventura-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #002f6c;
+        margin-top: 2rem;
+    }
+
+    .aventura-date {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        color: #444;
+    }
+
+    .aventura-image {
+        margin-top: 2.5rem;
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .aventura-text {
+        max-width: 850px;
+        margin: 3rem auto 0;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: #333;
+    }
+</style>
+
+<div class="aventura-container">
+    <!-- Titlu și dată coborâte mai jos față de navbar -->
+    <h1 class="aventura-title">Călătorie - Aventură</h1>
+    <p class="aventura-date">Postat de Royal Hamblin · 28 ian 2025</p>
+
+    <img src="@Url.Content("~/Content/img/blog-1.jpg")" alt="Image" class="aventura-image" />
+
+
+    <div class="aventura-text">
+        <p>
+            O călătorie aventuroasă este mult mai mult decât o simplă vacanță. Este despre a ieși din zona ta de confort,
+            a descoperi necunoscutul și a trăi momente unice.
+        </p>
+        <p>
+            Fie că explorezi jungla amazoniană, urci munți spectaculoși sau traversezi râuri sălbatice,
+            aventura îți dă un sentiment de libertate absolută.
+        </p>
+        <p>
+            Această experiență este dedicată celor care doresc adrenalină, senzații tari și provocări fizice sau mentale.
+            Nu rata șansa de a explora lumea într-un mod inedit!
+        </p>
+    </div>
+</div>
