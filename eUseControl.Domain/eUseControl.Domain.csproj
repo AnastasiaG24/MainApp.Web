@@ -55,6 +55,7 @@
     <Compile Include="Entities\Product\Ofert.cs" />
     <Compile Include="Entities\Res\ActionStatus.cs" />
     <Compile Include="Entities\Rezervare\Rezervare.cs" />
+    <Compile Include="Entities\Rezervare\RezervareOferta.cs" />
     <Compile Include="Entities\User\Global\LevelStatus.cs" />
     <Compile Include="Entities\User\UserDbTable.cs" />
     <Compile Include="Entities\User\UserLoginData.cs" />

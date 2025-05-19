@@ -67,6 +67,71 @@ namespace MainApp.Web.Controllers
 
             return View();
         }
+        private decimal GetPret(string destinatie)
+        {
+            switch (destinatie?.ToLower())
+            {
+                case "venetia": return 349.00m;
+                case "montblanc": return 479.00m;
+                case "kyoto": return 549.00m;
+                case "thailanda": return 649.00m;
+                default: return 0m;
+            }
+        }
+
+        private int GetZile(string destinatie)
+        {
+            switch (destinatie?.ToLower())
+            {
+                case "venetia": return 3;
+                case "montblanc": return 4;
+                case "kyoto": return 3;
+                case "thailanda": return 2;
+                default: return 0;
+            }
+        }
+
+        [HttpPost]
+        public ActionResult OfertaRezervare(string destinatie, string nume, string email, string cerere, int persoane)
+        {
+            // ✅ Pas 1: Verificăm dacă utilizatorul este logat
+            if (Session["Username"] == null)
+            {
+                TempData["destinatie"] = destinatie; // salvează pentru redirecționare
+                TempData["numeTemp"] = nume;
+                TempData["emailTemp"] = email;
+                TempData["cerereTemp"] = cerere;
+                TempData["persoaneTemp"] = persoane;
+
+                return RedirectToAction("Register", "Login"); // trimite la înregistrare
+            }
+
+            // ✅ Pas 2: dacă este logat, continuăm salvarea
+            var rezervare = new RezervareOferta
+            {
+                Nume = nume,
+                Email = email,
+                CereriSpeciale = cerere,
+                NrPersoane = persoane,
+                Destinatie = destinatie,
+                Pret = GetPret(destinatie),
+                Zile = GetZile(destinatie),
+                DataRezervare = DateTime.Now
+            };
+
+            using (var db = new UserContext())
+            {
+                db.RezervariOferte.Add(rezervare);
+                db.SaveChanges();
+            }
+
+            TempData["nume"] = nume;
+            TempData["destinatie"] = destinatie;
+
+            return RedirectToAction("Confirmare");
+        }
+
+
 
     }
 }
