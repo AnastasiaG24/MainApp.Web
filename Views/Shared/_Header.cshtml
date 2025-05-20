@@ -79,30 +79,30 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
                <div class="navbar-nav ms-auto py-0">
                     <a href="/" class="nav-item nav-link">Acasă</a>
-                    <a href="/About" class="nav-item nav-link">Despre</a>
-                    <a href="/Services" class="nav-item nav-link">Servicii</a>
-                    <a href="/Promotii" class="nav-item nav-link">Promoții</a>
-                    <a href="/Blog" class="nav-item nav-link">Blog</a>
+                    <a href="@Url.Action("About", "Home")" class="nav-item nav-link">Despre</a>
+                    <a href="@Url.Action("Services", "Home")" class="nav-item nav-link">Servicii</a>
+                    <a href="@Url.Action("Index_Promotii", "Home")" class="nav-item nav-link">Promoții</a>
+                    <a href="@Url.Action("Blog", "Home")" class="nav-item nav-link">Blog</a>
 
                     <div class="nav-item dropdown">
                          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pagini</a>
                          <div class="dropdown-menu m-0">
-                              <a href="/Pagini/Destinatie" class="dropdown-item">Destinație</a>
-                              <a href="/Pagini/Explorare" class="dropdown-item">Explorare</a>
-                              <a href="/Pagini/Rezerveaza_calatorie" class="dropdown-item">Rezervare călătorie</a>
-                              <a href="/Pagini/Galerie" class="dropdown-item">Galeria noastră</a>
-                              <a href="/Pagini/Ghid" class="dropdown-item">Ghid călătorii</a>
-                              <a href="/Pagini/Recenzii" class="dropdown-item">Recenzii</a>
-                              <a href="Pagini/Eroare" class="dropdown-item">Pagina 404</a>
+                             <a href="@Url.Action("Destinatii", "Home")" class="dropdown-item">Destinație</a>
+                             <a href="@Url.Action("Explorare", "Home")" class="dropdown-item">Explorare</a>
+                             <a href="@Url.Action("RezervaCalatorie", "Home")" class="dropdown-item">Rezervare călătorie</a>
+                             <a href="@Url.Action("Galerie", "Home")" class="dropdown-item">Galeria noastră</a>
+                             <a href="@Url.Action("Ghid", "Home")" class="dropdown-item">Ghid călătorii</a>
+                             <a href="@Url.Action("Recenzii", "Home")" class="dropdown-item">Recenzii</a>
+                             <a href="@Url.Action("Eroare", "Home")" class="dropdown-item">Pagina 404</a>
                          </div>
                     </div>
-                    <a href="/Contact" class="nav-item nav-link">Contacte</a>
+                    <a href="@Url.Action("Contact", "Home")" class="nav-item nav-link">Contacte</a>
                     @if (Session["UserRole"]?.ToString() == "Admin")
                     {
                          <a href="/Admin/Index" class="nav-item nav-link">Admin Panel</a>
                     }
                </div> <!-- Închidere pentru navbar-nav -->
           </div> <!-- Închidere pentru collapse navbar-collapse -->
-          <a href="/Rezervare" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Rezervează acum</a>
+          <a href="@Url.Action("Index", "Rezervare")" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Rezervează acum</a>
      </nav>
 </div>
