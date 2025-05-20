@@ -6,25 +6,10 @@ using MainApp.Web.Models;
 using System;
 using System.Diagnostics;
 using System.Web.Mvc;
+using eUseControl.Helpers.Helpers;
 
 public class LoginController : Controller
 {
-     private string GetMD5Hash(string input)
-     {
-          using (var md5 = System.Security.Cryptography.MD5.Create())
-          {
-               var inputBytes = System.Text.Encoding.UTF8.GetBytes(input);
-               var hashBytes = md5.ComputeHash(inputBytes);
-
-               var sb = new System.Text.StringBuilder();
-               foreach (var b in hashBytes)
-               {
-                    sb.Append(b.ToString("x2"));
-               }
-               return sb.ToString();
-          }
-     }
-
      private readonly ISession _session;
 
      public LoginController()
@@ -49,13 +34,13 @@ public class LoginController : Controller
           {
                Debug.WriteLine("A intrat în if (ModelState.IsValid)");
                Debug.WriteLine("Parola introdusă: " + login.Password);
-               Debug.WriteLine("Parola MD5: " + GetMD5Hash(login.Password));
+               Debug.WriteLine("Parola MD5: " + HashHelper.GetMD5Hash(login.Password));
                Debug.WriteLine("Credential: " + login.Credential);
 
                UserLoginData data = new UserLoginData
                {
                     Credential = login.Credential,
-                    Password = GetMD5Hash(login.Password),
+                    Password = HashHelper.GetMD5Hash(login.Password),
                     LoginIp = Request.UserHostAddress,
                     LoginDataTime = DateTime.Now
                };
@@ -134,8 +119,8 @@ public class LoginController : Controller
                     return View(register);
                }
 
-               register.Password = GetMD5Hash(register.Password);
-               register.ConfirmPassword = GetMD5Hash(register.ConfirmPassword);
+               register.Password = HashHelper.GetMD5Hash(register.Password);
+               register.ConfirmPassword = HashHelper.GetMD5Hash(register.ConfirmPassword);
 
                var result = _session.RegisterUser(register); // AICI verificăm rezultatul
 
