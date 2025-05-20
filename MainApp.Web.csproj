@@ -278,6 +278,10 @@
       <Project>{cbfa66b5-8f6c-449d-9697-7d5426e76871}</Project>
       <Name>eUseControl.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="eUseControl.Helpers\eUseControl.Helpers.csproj">
+      <Project>{7289c7f2-06a9-4dd9-8fb2-7b96ba3eefb8}</Project>
+      <Name>eUseControl.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
