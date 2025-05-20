@@ -1,4 +1,6 @@
 ﻿using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.BusinessLogic.Core;
+using eUseControl.BusinessLogic;
 
 namespace eUseControl.BusinessLogic
 {
@@ -13,5 +15,14 @@ namespace eUseControl.BusinessLogic
           {
                return new ProductBL();
           }
+          public IAdminUser GetAdminUserBL()
+          {
+               return new AdminUserBL(); 
+          }
+          public IRezervare GetRezervareBL()
+          {
+               return new RezervareBL();
+          }
+
      }
 }

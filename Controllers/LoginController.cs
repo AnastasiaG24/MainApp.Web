@@ -9,23 +9,23 @@ using System.Web.Mvc;
 
 public class LoginController : Controller
 {
-    private string GetMD5Hash(string input)
-    {
-        using (var md5 = System.Security.Cryptography.MD5.Create())
-        {
-            var inputBytes = System.Text.Encoding.UTF8.GetBytes(input);
-            var hashBytes = md5.ComputeHash(inputBytes);
+     private string GetMD5Hash(string input)
+     {
+          using (var md5 = System.Security.Cryptography.MD5.Create())
+          {
+               var inputBytes = System.Text.Encoding.UTF8.GetBytes(input);
+               var hashBytes = md5.ComputeHash(inputBytes);
 
-            var sb = new System.Text.StringBuilder();
-            foreach (var b in hashBytes)
-            {
-                sb.Append(b.ToString("x2"));
-            }
-            return sb.ToString();
-        }
-    }
+               var sb = new System.Text.StringBuilder();
+               foreach (var b in hashBytes)
+               {
+                    sb.Append(b.ToString("x2"));
+               }
+               return sb.ToString();
+          }
+     }
 
-    private readonly ISession _session;
+     private readonly ISession _session;
 
      public LoginController()
      {
@@ -40,125 +40,123 @@ public class LoginController : Controller
           return View("~/Views/Login/Login.cshtml");
      }
 
-    // Procesare date login
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public ActionResult Index(UserLogin login)
-    {
-        if (ModelState.IsValid)
-        {
-            Debug.WriteLine("A intrat în if (ModelState.IsValid)");
-            Debug.WriteLine("Parola introdusă: " + login.Password);
-            Debug.WriteLine("Parola MD5: " + GetMD5Hash(login.Password));
-            Debug.WriteLine("Credential: " + login.Credential);
+     // Procesare date login
+     [HttpPost]
+     [ValidateAntiForgeryToken]
+     public ActionResult Index(UserLogin login)
+     {
+          if (ModelState.IsValid)
+          {
+               Debug.WriteLine("A intrat în if (ModelState.IsValid)");
+               Debug.WriteLine("Parola introdusă: " + login.Password);
+               Debug.WriteLine("Parola MD5: " + GetMD5Hash(login.Password));
+               Debug.WriteLine("Credential: " + login.Credential);
 
-            UserLoginData data = new UserLoginData
-            {
-                Credential = login.Credential,
-                Password = GetMD5Hash(login.Password),
-                LoginIp = Request.UserHostAddress,
-                LoginDataTime = DateTime.Now
-            };
+               UserLoginData data = new UserLoginData
+               {
+                    Credential = login.Credential,
+                    Password = GetMD5Hash(login.Password),
+                    LoginIp = Request.UserHostAddress,
+                    LoginDataTime = DateTime.Now
+               };
 
-            var result = _session.UserLogin(data);
+               var result = _session.UserLogin(data);
 
-            if (result.Status && result.User != null)
-            {
-                Debug.WriteLine("Autentificare reușită!");
-                Debug.WriteLine("Rol utilizator: " + result.User.Level);
-                Debug.WriteLine("Sesiune UserRole: " + Session["UserRole"]);
+               if (result.Status && result.User != null)
+               {
+                    Debug.WriteLine("Autentificare reușită!");
+                    Debug.WriteLine("Rol utilizator: " + result.User.Level);
+                    Debug.WriteLine("Sesiune UserRole: " + Session["UserRole"]);
 
-                // ✅ Setăm datele în sesiune
-                Session["Username"] = result.User.Username;
-                Session["UserRole"] = result.User.Level.ToString();
-                Session["LoginStatus"] = "login";
+                    Session["Username"] = result.User.Username;
+                    Session["UserRole"] = result.User.Level.ToString();
+                    Session["LoginStatus"] = "login";
 
-                // ✅ AICI adaugi blocul cu verificarea rezervării
-                if (TempData["destinatie"] != null)
-                {
-                    TempData.Keep(); // dacă vrei să le mai folosești în view
-
-                    string dest = TempData["destinatie"].ToString();
-                    string nume = TempData["numeTemp"]?.ToString();
-                    string email = TempData["emailTemp"]?.ToString();
-                    string cerere = TempData["cerereTemp"]?.ToString();
-                    int persoane = TempData["persoaneTemp"] != null ? Convert.ToInt32(TempData["persoaneTemp"]) : 2;
-
-                    return RedirectToAction("OfertaRezervare", "Rezervare", new
+                    if (TempData["destinatie"] != null)
                     {
-                        destinatie = dest,
-                        nume = nume,
-                        email = email,
-                        cerere = cerere,
-                        persoane = persoane
-                    });
-                }
+                         TempData.Keep(); // dacă vrei să le mai folosești în view
 
-                // 🔁 Dacă nu e vorba de rezervare, redirecționează normal
-                if (result.User.Level == URole.Admin)
-                    return RedirectToAction("Index", "Admin");
-                else
-                    return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Nume de utilizator sau parola incorectă. Vă rugăm să încercați din nou!");
-            }
-        }
+                         string dest = TempData["destinatie"].ToString();
+                         string nume = TempData["numeTemp"]?.ToString();
+                         string email = TempData["emailTemp"]?.ToString();
+                         string cerere = TempData["cerereTemp"]?.ToString();
+                         int persoane = TempData["persoaneTemp"] != null ? Convert.ToInt32(TempData["persoaneTemp"]) : 2;
 
-        return View("~/Views/Login/Login.cshtml");
-    }
+                         return RedirectToAction("OfertaRezervare", "Rezervare", new
+                         {
+                              destinatie = dest,
+                              nume = nume,
+                              email = email,
+                              cerere = cerere,
+                              persoane = persoane
+                         });
+                    }
+
+                    // 🔁 Dacă nu e vorba de rezervare, redirecționează normal
+                    if (result.User.Level == URole.Admin)
+                         return RedirectToAction("Index", "Admin");
+                    else
+                         return RedirectToAction("Index", "Home");
+               }
+               else
+               {
+                    ModelState.AddModelError("", "Nume de utilizator sau parola incorectă. Vă rugăm să încercați din nou!");
+               }
+          }
+
+          return View("~/Views/Login/Login.cshtml");
+     }
 
 
-    [HttpGet]
+     [HttpGet]
      public ActionResult Register()
      {
           return View("~/Views/Login/Register.cshtml");
      }
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    [ValidateInput(false)]
-    public ActionResult Register(UserRegisterData register)
-    {
-        if (ModelState.IsValid)
-        {
-            if (register.Password != register.ConfirmPassword)
-            {
-                ModelState.AddModelError("", "Parolele nu coincid.");
-                return View(register);
-            }
+     [HttpPost]
+     [ValidateAntiForgeryToken]
+     [ValidateInput(false)]
+     public ActionResult Register(UserRegisterData register)
+     {
+          if (ModelState.IsValid)
+          {
+               if (register.Password != register.ConfirmPassword)
+               {
+                    ModelState.AddModelError("", "Parolele nu coincid.");
+                    return View(register);
+               }
 
-            var userExists = _session.CheckUserExists(register.Credential, register.Email);
-            if (userExists)
-            {
-                ModelState.AddModelError("", "Utilizatorul sau emailul există deja.");
-                return View(register);
-            }
+               var userExists = _session.CheckUserExists(register.Credential, register.Email);
+               if (userExists)
+               {
+                    ModelState.AddModelError("", "Utilizatorul sau emailul există deja.");
+                    return View(register);
+               }
 
-            register.Password = GetMD5Hash(register.Password);
-            register.ConfirmPassword = GetMD5Hash(register.ConfirmPassword);
+               register.Password = GetMD5Hash(register.Password);
+               register.ConfirmPassword = GetMD5Hash(register.ConfirmPassword);
 
-            var result = _session.RegisterUser(register); // AICI verificăm rezultatul
+               var result = _session.RegisterUser(register); // AICI verificăm rezultatul
 
-            // 🔽 AICI adaugi blocul pentru redirecționare dacă utilizatorul venea de la rezervare
-            if (result)
-            {
-                if (TempData["destinatie"] != null)
-                {
-                    TempData.Keep(); // păstrează datele pentru pasul următor (login)
-                }
+               // 🔽 AICI adaugi blocul pentru redirecționare dacă utilizatorul venea de la rezervare
+               if (result)
+               {
+                    if (TempData["destinatie"] != null)
+                    {
+                         TempData.Keep(); // păstrează datele pentru pasul următor (login)
+                    }
 
-                return RedirectToAction("Login", "Login");
-            }
+                    return RedirectToAction("Login", "Login");
+               }
 
-            else
-            {
-                ModelState.AddModelError("", "Eroare la crearea contului. Încercați din nou.");
-            }
-        }
+               else
+               {
+                    ModelState.AddModelError("", "Eroare la crearea contului. Încercați din nou.");
+               }
+          }
 
-        return View("~/Views/Login/Register.cshtml");
-    }
+          return View("~/Views/Login/Register.cshtml");
+     }
 
 }
