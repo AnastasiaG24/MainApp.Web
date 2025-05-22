@@ -48,6 +48,6 @@ namespace MainApp.Web.Controllers
         public ActionResult Ghid() { return View("~/Views/Pagini/Ghid.cshtml"); }
         public ActionResult Recenzii() { return View("~/Views/Pagini/Recenzii.cshtml"); }
         public ActionResult Eroare() { return View("~/Views/Pagini/Eroare.cshtml"); }
-        public ActionResult RezervaCalatorie() { return View("~/Views/Pagini/Rezerveaza_calatorie.cshtml"); }
+        public ActionResult RezervaCalatorie() { return View("~/Views/Pagini/Rezerveaza_calatorie.cshtml");}
     }
 }
