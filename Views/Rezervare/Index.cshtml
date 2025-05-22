@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Rezervare";
-    Layout = "~/Views/Shared/_RezervareLayout.cshtml"; // Vezi pasul 2
+    Layout = "~/Views/Shared/_RezervareLayout.cshtml"; 
 }
 
 <div class="container mt-5 mb-5">
@@ -38,6 +38,7 @@
 
                 <button type="submit" class="btn btn-primary w-100">Trimite rezervarea</button>
             }
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary w-100 mt-2" role="button">Pagina principală</a>
         </div>
     </div>
 </div>

@@ -7,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Web.Mvc;
 using eUseControl.Helpers.Helpers;
+using System.Web.Security;
 
 public class LoginController : Controller
 {
@@ -32,10 +33,6 @@ public class LoginController : Controller
      {
           if (ModelState.IsValid)
           {
-               Debug.WriteLine("A intrat în if (ModelState.IsValid)");
-               Debug.WriteLine("Parola introdusă: " + login.Password);
-               Debug.WriteLine("Parola MD5: " + HashHelper.GetMD5Hash(login.Password));
-               Debug.WriteLine("Credential: " + login.Credential);
 
                UserLoginData data = new UserLoginData
                {
@@ -47,43 +44,37 @@ public class LoginController : Controller
 
                var result = _session.UserLogin(data);
 
-               if (result.Status && result.User != null)
-               {
-                    Debug.WriteLine("Autentificare reușită!");
-                    Debug.WriteLine("Rol utilizator: " + result.User.Level);
-                    Debug.WriteLine("Sesiune UserRole: " + Session["UserRole"]);
+            if (result.Status && result.User != null)
+            {
+                Session["Username"] = result.User.Username;
+                Session["UserRole"] = result.User.Level.ToString();
+                Session["LoginStatus"] = "login";
 
-                    Session["Username"] = result.User.Username;
-                    Session["UserRole"] = result.User.Level.ToString();
-                    Session["LoginStatus"] = "login";
+                if (TempData["destinatie"] != null)
+                {
+                    TempData.Keep();
+                    string dest = TempData["destinatie"].ToString();
+                    string nume = TempData["numeTemp"]?.ToString();
+                    string email = TempData["emailTemp"]?.ToString();
+                    string cerere = TempData["cerereTemp"]?.ToString();
+                    int persoane = TempData["persoaneTemp"] != null ? Convert.ToInt32(TempData["persoaneTemp"]) : 2;
 
-                    if (TempData["destinatie"] != null)
+                    return RedirectToAction("OfertaRezervare", "Rezervare", new
                     {
-                         TempData.Keep(); // dacă vrei să le mai folosești în view
+                        destinatie = dest,
+                        nume = nume,
+                        email = email,
+                        cerere = cerere,
+                        persoane = persoane
+                    });
+                }
 
-                         string dest = TempData["destinatie"].ToString();
-                         string nume = TempData["numeTemp"]?.ToString();
-                         string email = TempData["emailTemp"]?.ToString();
-                         string cerere = TempData["cerereTemp"]?.ToString();
-                         int persoane = TempData["persoaneTemp"] != null ? Convert.ToInt32(TempData["persoaneTemp"]) : 2;
-
-                         return RedirectToAction("OfertaRezervare", "Rezervare", new
-                         {
-                              destinatie = dest,
-                              nume = nume,
-                              email = email,
-                              cerere = cerere,
-                              persoane = persoane
-                         });
-                    }
-
-                    // 🔁 Dacă nu e vorba de rezervare, redirecționează normal
-                    if (result.User.Level == URole.Admin)
-                         return RedirectToAction("Index", "Admin");
-                    else
-                         return RedirectToAction("Index", "Home");
-               }
-               else
+                if (result.User.Level == URole.Admin)
+                    return RedirectToAction("Index", "Admin");
+                else
+                    return RedirectToAction("Index", "Home");
+            }
+            else
                {
                     ModelState.AddModelError("", "Nume de utilizator sau parola incorectă. Vă rugăm să încercați din nou!");
                }
