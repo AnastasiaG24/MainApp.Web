@@ -134,5 +134,13 @@ public class LoginController : Controller
 
           return View("~/Views/Login/Register.cshtml");
      }
+     public ActionResult Logout()
+     {
+          Session.Clear();
+          Session.Abandon();
+
+          return RedirectToAction("Index", "Home");
+     }
+
 
 }
