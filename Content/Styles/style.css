@@ -1188,7 +1188,9 @@
 
 /*** Testimonial End ***/
 
-
+.bg-page {
+    background-color: #e0f0ff !important;
+}
 
 
 /*** Contact Start ***/

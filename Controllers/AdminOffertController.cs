@@ -66,9 +66,7 @@ namespace MainApp.Web.Controllers
             return View(ofert);
         }
 
-
-
-        public ActionResult Edit(int? id)
+            public ActionResult Edit(int? id)
           {
                if (Session["Level"]?.ToString() != "Admin")
                     return RedirectToAction("Index", "Home");

@@ -23,5 +23,6 @@ namespace eUseControl.Domain.Entities
         public DateTime DataRezervare { get; set; } = DateTime.Now;
 
         public bool Aprobat { get; set; } = false;
+        public bool Respins { get; set; }
     }
 }

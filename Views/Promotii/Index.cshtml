@@ -83,7 +83,8 @@
                             </div>
                             <div class="row bg-primary rounded-bottom mx-0">
                                 <div class="col-12 text-center px-0">
-                                    <a href="@Url.Action("OfertaRezervare", "Rezervare", new { destinatie = o.Description })" class="btn-hover btn text-white py-2 px-4">Cumpără acum</a>
+                                    <a href="@Url.Action("Rezerveaza", "Rezervare", new { id = o.Id })" class="btn-hover btn text-white py-2 px-4">Cumpără acum</a>
+
                                     @if (Session["Level"]?.ToString() == "Admin")
                                     {
                                         <div class="mt-2">

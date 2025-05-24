@@ -1,4 +1,5 @@
-﻿using eUseControl.Domain.Entities;
+﻿using eUseControl.BusinessLogic.DBModel;
+using eUseControl.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,8 @@ namespace eUseControl.BusinessLogic.Interfaces
     {
         List<RezervareOferta> GetAllRezervari();
         void AprobaRezervare(int id);
+        void RespingeRezervare(int id);
+        void SalveazaRezervare(Rezervare rezervare);
+        void SalveazaOferta(RezervareOferta oferta);
     }
 }

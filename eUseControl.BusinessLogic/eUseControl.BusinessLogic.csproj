@@ -64,6 +64,10 @@
     <Compile Include="Migrations\202505241805420_UpdateSchema.Designer.cs">
       <DependentUpon>202505241805420_UpdateSchema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505241934105_UpdateUserContext.cs" />
+    <Compile Include="Migrations\202505241934105_UpdateUserContext.Designer.cs">
+      <DependentUpon>202505241934105_UpdateUserContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\AdminOffertBL.cs" />
     <Compile Include="Services\AdminRezervareBL.cs" />
     <Compile Include="Services\AdminUserBL.cs" />
@@ -109,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505241805420_UpdateSchema.resx">
       <DependentUpon>202505241805420_UpdateSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505241934105_UpdateUserContext.resx">
+      <DependentUpon>202505241934105_UpdateUserContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
