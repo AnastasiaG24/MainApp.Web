@@ -213,6 +213,7 @@
     <Compile Include="App_Start\FilterConfig2.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminRezervareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\AdminOffertController.cs" />
@@ -261,6 +262,10 @@
     <Content Include="Views\AdminOffert\Create.cshtml" />
     <Content Include="Views\AdminOffert\Edit.cshtml" />
     <Content Include="Views\AdminOffert\Delete.cshtml" />
+    <Content Include="Views\Rezervare\Rezerveaza.cshtml" />
+    <Content Include="Views\Rezervare\AsteaptaAprobare.cshtml" />
+    <Content Include="Views\Rezervare\RezervarileMele.cshtml" />
+    <Content Include="Views\Admin\RezervariAsteptare.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -272,6 +277,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="bin\roslyn\" />
     <Folder Include="Data\" />
+    <Folder Include="Views\AdminRezervare\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="eUseControl.BusinessLogic\eUseControl.BusinessLogic.csproj">

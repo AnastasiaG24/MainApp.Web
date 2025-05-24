@@ -250,7 +250,6 @@ namespace eUseControl.BusinessLogic.Core
                 return db.Users.ToList();
             }
         }
-
         public List<RezervareOferta> GetAllRezervari()
         {
             using (var db = new UserContext())
@@ -258,7 +257,6 @@ namespace eUseControl.BusinessLogic.Core
                 return db.RezervariOferte.ToList();
             }
         }
-
         public void AprobaRezervare(int id)
         {
             using (var db = new UserContext())
@@ -267,6 +265,19 @@ namespace eUseControl.BusinessLogic.Core
                 if (rez != null)
                 {
                     rez.Aprobat = true;
+                    db.SaveChanges();
+                }
+            }
+        }
+        public void RespingeRezervare(int id)
+        {
+            using (var db = new UserContext())
+            {
+                var rez = db.RezervariOferte.FirstOrDefault(r => r.Id == id);
+                if (rez != null)
+                {
+                    rez.Aprobat = false;
+                    rez.Respins = true; 
                     db.SaveChanges();
                 }
             }
@@ -286,6 +297,10 @@ namespace eUseControl.BusinessLogic.Core
                 db.RezervariOferte.Add(oferta);
                 db.SaveChanges();
             }
+        }
+        internal List<RezervareOferta> GetRezervariByUsename(string username)
+        {
+            throw new NotImplementedException();
         }
     }
 

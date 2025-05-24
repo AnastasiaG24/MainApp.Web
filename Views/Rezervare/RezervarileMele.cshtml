@@ -1,0 +1,58 @@
+﻿@model List<eUseControl.Domain.Entities.RezervareOferta>
+
+@{
+    ViewBag.Title = "Rezervările mele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Învelim totul într-un div care ocupă toată lățimea și are fundal gri -->
+<div class="container-fluid bg-page py-5">
+    <div class="container">
+        <h2 class="mb-4 mt-4  text-center">Rezervările mele</h2>
+
+        @if (!Model.Any())
+        {
+            <p class="text-center">Nu aveți rezervări înregistrate.</p>
+        }
+        else
+        {
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Destinație</th>
+                        <th>Persoane</th>
+                        <th>Dată rezervare</th>
+                        <th>Stare</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        var r = Model[i];
+                        <tr>
+                            <td>@(i + 1)</td>
+                            <td>@r.Destinatie</td>
+                            <td>@r.NumarPersoane</td>
+                            <td>@r.DataRezervare.ToString("dd.MM.yyyy")</td>
+                            <td>
+                                @if (r.Respins)
+                                {
+                                    <span class="badge bg-danger">Respins</span>
+                                }
+                                else if (!r.Aprobat)
+                                {
+                                    <span class="badge bg-warning text-dark">În așteptare</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success">Aprobat</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

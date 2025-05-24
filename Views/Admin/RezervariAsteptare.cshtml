@@ -1,0 +1,47 @@
+﻿@model List<eUseControl.Domain.Entities.RezervareOferta>
+
+@{
+    ViewBag.Title = "Rezervări în așteptare";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5">
+    <h2 class="mb-4 text-center">Rezervări în așteptare</h2>
+
+    @if (!Model.Any())
+    {
+        <p class="text-center">Nu există rezervări în așteptare.</p>
+    }
+    else
+    {
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Utilizator</th>
+                    <th>Destinație</th>
+                    <th>Persoane</th>
+                    <th>Data</th>
+                    <th>Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var r = Model[i];
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@r.Nume</td>
+                        <td>@r.Destinatie</td>
+                        <td>@r.NumarPersoane</td>
+                        <td>@r.DataRezervare.ToString("dd.MM.yyyy")</td>
+                        <td>
+                            <a href="@Url.Action("Aproba", "AdminRezervare", new { id = r.Id })" class="btn btn-success btn-sm">Aprobă</a>
+                            <a href="@Url.Action("Respinge", "AdminRezervare", new { id = r.Id })" class="btn btn-danger btn-sm">Respinge</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

@@ -22,22 +22,22 @@
                                         <small><i class="fa fa-user me-2"></i>Salut, @Session["Username"]</small>
                                    </a>
                                    <div class="dropdown-menu dropdown-menu-end rounded">
-                                        <a href="#" class="dropdown-item">
-                                             <i class="fas fa-user-alt me-2"></i> Profilul meu
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                             <i class="fas fa-comment-alt me-2"></i> Inbox
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                             <i class="fas fa-bell me-2"></i> Notificări
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                             <i class="fas fa-cog me-2"></i> Setări cont
-                                        </a>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="@Url.Action("Logout", "Login")" class="dropdown-item text-danger">
-                                             <i class="fas fa-power-off me-2"></i> Ieșire
-                                        </a>
+                                       <a href="@Url.Action("RezervarileMele", "Rezervare")" class="dropdown-item">
+                                           <i class="fas fa-user-alt me-2"></i> Rezervarile mele
+                                       </a>
+                                       <a href="#" class="dropdown-item">
+                                           <i class="fas fa-comment-alt me-2"></i> Inbox
+                                       </a>
+                                       <a href="#" class="dropdown-item">
+                                           <i class="fas fa-bell me-2"></i> Notificări
+                                       </a>
+                                       <a href="#" class="dropdown-item">
+                                           <i class="fas fa-cog me-2"></i> Setări cont
+                                       </a>
+                                       <div class="dropdown-divider"></div>
+                                       <a href="@Url.Action("Logout", "Login")" class="dropdown-item text-danger">
+                                           <i class="fas fa-power-off me-2"></i> Ieșire
+                                       </a>
 
                                    </div>
                               </div>
