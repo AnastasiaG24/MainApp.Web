@@ -258,7 +258,9 @@
     <Content Include="Views\Blog\Munti.cshtml" />
     <Content Include="Views\Pagini\Rezerveaza_calatorie.cshtml" />
     <Content Include="Views\Promotii\Index.cshtml" />
-    <Content Include="Views\Promotii\Create.cshtml" />
+    <Content Include="Views\AdminOffert\Create.cshtml" />
+    <Content Include="Views\AdminOffert\Edit.cshtml" />
+    <Content Include="Views\AdminOffert\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

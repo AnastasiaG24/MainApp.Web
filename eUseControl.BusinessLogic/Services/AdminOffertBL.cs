@@ -1,4 +1,5 @@
 ﻿using eUseControl.BusinessLogic.Core;
+using eUseControl.BusinessLogic.DBModel;
 using eUseControl.BusinessLogic.Interfaces;
 using eUseControl.Domain.Entities.Product;
 using System;
@@ -11,12 +12,16 @@ namespace eUseControl.BusinessLogic.Services
 {
      public class AdminOffertBL : AdminApi, IAdminOfert
      {
-          public new void AddOfert(Ofert ofert)
-          {
-               base.AddOfert(ofert);
-          }
+        public virtual void AddOfert(Ofert ofert)
+        {
+            using (var db = new UserContext())
+            {
+                db.Oferts.Add(ofert);
+                db.SaveChanges(); 
+            }
+        }
 
-          public new void DeleteOfertById(int id)
+        public new void DeleteOfertById(int id)
           {
                base.DeleteOfertById(id);
           }

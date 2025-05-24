@@ -32,58 +32,80 @@
 
 <!-- Packages Start -->
 <div class="container-fluid packages py-5">
-     <div class="container py-5">
-          <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-               <h5 class="section-title px-3">Promoții</h5>
-               <h1 class="mb-0">Promoții excepționale</h1>
-          </div>
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Promoții</h5>
+            <h1 class="mb-0">Promoții excepționale</h1>
+        </div>
 
-          <div class="row">
-               @foreach (var o in Model)
-               {
-                    <div class="col-lg-4 mb-4">
-                         <div class="packages-item">
-                              <div class="packages-img">
-                                   <img src="@Url.Content("~/Content/img/packages-1.jpg")" class="img-fluid w-100 rounded-top" alt="Image">
-                                   <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0;">
-                                        <small class="flex-fill text-center border-end py-2">
-                                             <i class="fa fa-map-marker-alt me-2"></i>@o.Description
-                                        </small>
-                                        <small class="flex-fill text-center border-end py-2">
-                                             <i class="fa fa-calendar-alt me-2"></i>@((o.EndDate - o.StartDate).Days) zile
-                                        </small>
-                                        <small class="flex-fill text-center py-2">
-                                             <i class="fa fa-user me-2"></i>2 Persoane
-                                        </small>
-                                   </div>
-                                   <div class="packages-price py-2 px-4">@o.Price Lei</div>
-                              </div>
-                              <div class="packages-content bg-light">
-                                   <div class="p-4 pb-0">
-                                        <h5 class="mb-0">@o.Name</h5>
-                                        <small class="text-uppercase">Ofertă specială</small>
-                                        <div class="mb-3">
-                                             @for (int i = 0; i < 5; i++)
-                                             {
-                                                  <small class="fa fa-star text-primary"></small>
-                                             }
+        @if (Session["Level"] != null && Session["Level"].ToString() == "Admin")
+        {
+            <div class="mb-4 text-end">
+                <a href="@Url.Action("Create", "AdminOffert")" class="btn btn-primary">
+                    Adaugă ofertă
+                </a>
+            </div>
+                }
+
+        <div class="row">
+            @foreach (var o in Model)
+            {
+                <div class="col-lg-4 mb-4">
+                    <div class="packages-item">
+                        <div class="packages-img">
+                            <img src="@Url.Content("~/Content/img/packages-1.jpg")" class="img-fluid w-100 rounded-top" alt="Image">
+                            <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0;">
+                                <small class="flex-fill text-center border-end py-2">
+                                    <i class="fa fa-map-marker-alt me-2"></i>@o.Description
+                                </small>
+                                <small class="flex-fill text-center border-end py-2">
+                                    <i class="fa fa-calendar-alt me-2"></i>@((o.EndDate - o.StartDate).Days) zile
+                                </small>
+                                <small class="flex-fill text-center py-2">
+                                    <i class="fa fa-user me-2"></i>2 Persoane
+                                </small>
+                            </div>
+                            <div class="packages-price py-2 px-4">@o.Price Lei</div>
+                        </div>
+                        <div class="packages-content bg-light">
+                            <div class="p-4 pb-0">
+                                <h5 class="mb-0">@o.Name</h5>
+                                <small class="text-uppercase">Ofertă specială</small>
+                                <div class="mb-3">
+                                    @for (int i = 0; i < 5; i++)
+                                    {
+                                        <small class="fa fa-star text-primary"></small>
+                                    }
+                                </div>
+                                <p class="mb-4">
+                                    Călătorie: @o.Description – @o.StartDate.ToShortDateString() până la @o.EndDate.ToShortDateString()
+                                </p>
+                            </div>
+                            <div class="row bg-primary rounded-bottom mx-0">
+                                <div class="col-12 text-center px-0">
+                                    <a href="@Url.Action("OfertaRezervare", "Rezervare", new { destinatie = o.Description })" class="btn-hover btn text-white py-2 px-4">Cumpără acum</a>
+                                    @if (Session["Level"]?.ToString() == "Admin")
+                                    {
+                                        <div class="mt-2">
+                                            <a href="@Url.Action("Edit", "AdminOffert", new { id = o.Id })" class="btn btn-primary">
+                                                Editează
+                                            </a>
+                                            <a href="@Url.Action("Delete", "AdminOffert", new { id = o.Id })"
+                                               onclick="return confirm('Ești sigur că vrei să ștergi această ofertă?')"
+                                               class="btn btn-primary">
+                                                Șterge
+                                            </a>
                                         </div>
-                                        <p class="mb-4">
-                                             Călătorie: @o.Description – @o.StartDate.ToShortDateString() până la @o.EndDate.ToShortDateString()
-                                        </p>
-                                   </div>
-                                   <div class="row bg-primary rounded-bottom mx-0">
-                                        <div class="col-12 text-center px-0">
-                                             <a href="@Url.Action("OfertaRezervare", "Rezervare", new { destinatie = o.Description })" class="btn-hover btn text-white py-2 px-4">Cumpără acum</a>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
                     </div>
-               }
+                </div>
+            }
 
-          </div>
-     </div>
+        </div>
+    </div>
 </div>
 <!-- Packages End -->
 <!-- Tour Booking Start -->

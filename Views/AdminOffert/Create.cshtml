@@ -1,0 +1,48 @@
+﻿@model eUseControl.Domain.Entities.Product.Ofert
+
+@{
+    ViewBag.Title = "Adaugă ofertă";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Adaugă ofertă nouă</h2>
+
+@using (Html.BeginForm("Create", "AdminOffert", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+   
+<div class="form-horizontal">
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.StartDate)
+        @Html.TextBoxFor(m => m.StartDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.EndDate)
+        @Html.TextBoxFor(m => m.EndDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.IsAllIn)
+        @Html.CheckBoxFor(m => m.IsAllIn)
+    </div>
+    <button type="submit" class="btn btn-primary">Adaugă</button>
+</div>
+}

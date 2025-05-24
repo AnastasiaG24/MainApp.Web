@@ -1,0 +1,31 @@
+﻿@model eUseControl.Domain.Entities.Product.Ofert
+
+@{
+    ViewBag.Title = "Șterge ofertă";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Confirmă ștergerea</h2>
+
+<div>
+    <h4>Sigur vrei să ștergi oferta "@Model.Name"?</h4>
+    <dl class="dl-horizontal">
+        <dt>Descriere</dt>
+        <dd>@Model.Description</dd>
+
+        <dt>Perioadă</dt>
+        <dd>@Model.StartDate.ToShortDateString() - @Model.EndDate.ToShortDateString()</dd>
+
+        <dt>Preț</dt>
+        <dd>@Model.Price lei</dd>
+    </dl>
+
+    @using (Html.BeginForm("Delete", "AdminOffert", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+
+        <button type="submit" class="btn btn-danger">Confirmă ștergerea</button>
+        <a href="@Url.Action("Index", "Promotii")" class="btn btn-secondary">Renunță</a>
+    }
+</div>
