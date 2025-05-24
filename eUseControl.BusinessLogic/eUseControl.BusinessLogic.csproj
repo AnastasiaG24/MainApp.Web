@@ -51,7 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IAdminRezervare.cs" />
+    <Compile Include="Migrations\202505241552136_InitialCreate.cs" />
+    <Compile Include="Migrations\202505241552136_InitialCreate.Designer.cs">
+      <DependentUpon>202505241552136_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505241804493_InitialCreate1.cs" />
+    <Compile Include="Migrations\202505241804493_InitialCreate1.Designer.cs">
+      <DependentUpon>202505241804493_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505241805420_UpdateSchema.cs" />
+    <Compile Include="Migrations\202505241805420_UpdateSchema.Designer.cs">
+      <DependentUpon>202505241805420_UpdateSchema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\AdminOffertBL.cs" />
+    <Compile Include="Services\AdminRezervareBL.cs" />
     <Compile Include="Services\AdminUserBL.cs" />
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="Core\AdminApi.cs" />
@@ -63,14 +77,6 @@
     <Compile Include="Interfaces\IRezervare.cs" />
     <Compile Include="Interfaces\IUserOfert.cs" />
     <Compile Include="Interfaces\ISession.cs" />
-    <Compile Include="Migrations\202505222011513_IntialCreate.cs" />
-    <Compile Include="Migrations\202505222011513_IntialCreate.Designer.cs">
-      <DependentUpon>202505222011513_IntialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202505222012244_UpdateUserModel.cs" />
-    <Compile Include="Migrations\202505222012244_UpdateUserModel.Designer.cs">
-      <DependentUpon>202505222012244_UpdateUserModel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Services\OffertBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,11 +101,14 @@
     <Folder Include="DBModel\Seed\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202505222011513_IntialCreate.resx">
-      <DependentUpon>202505222011513_IntialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202505241552136_InitialCreate.resx">
+      <DependentUpon>202505241552136_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202505222012244_UpdateUserModel.resx">
-      <DependentUpon>202505222012244_UpdateUserModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202505241804493_InitialCreate1.resx">
+      <DependentUpon>202505241804493_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505241805420_UpdateSchema.resx">
+      <DependentUpon>202505241805420_UpdateSchema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

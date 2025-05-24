@@ -1,21 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace eUseControl.Domain.Entities
 {
     public class RezervareOferta
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required]
         public string Nume { get; set; }
+
+        [Required]
         public string Email { get; set; }
-        public string CereriSpeciale { get; set; }
-        public int NrPersoane { get; set; }
+
+        public string Cerere { get; set; }
+
+        public int NumarPersoane { get; set; }
+
         public string Destinatie { get; set; }
-        public decimal Pret { get; set; } 
-        public int Zile { get; set; } 
-        public DateTime DataRezervare { get; set; }
+
+        public DateTime DataRezervare { get; set; } = DateTime.Now;
+
+        public bool Aprobat { get; set; } = false;
     }
 }
