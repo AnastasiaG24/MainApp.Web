@@ -26,9 +26,9 @@ namespace MainApp.Web.Controllers
           {
                return View("~/Views/Blog/Index.cshtml");
           }
-          public ActionResult Index_Promotii()
+          public ActionResult Promotii()
           {
-               return View("~/Views/Promotii/Index_Promotii.cshtml");
+               return View("~/Views/Promotii/Promotii.cshtml");
           }
           
 

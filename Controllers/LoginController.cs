@@ -34,7 +34,6 @@ public class LoginController : Controller
      {
           if (ModelState.IsValid)
           {
-
                UserLoginData data = new UserLoginData
                {
                     Credential = login.Credential,
@@ -51,6 +50,13 @@ public class LoginController : Controller
                     Session["UserRole"] = result.User.Level.ToString();
                     Session["LoginStatus"] = "login";
 
+                    // 🟨 Setează nivelul
+                    if (result.User.Level == URole.Admin)
+                         Session["Level"] = "Admin";
+                    else
+                         Session["Level"] = "User";
+
+                    // 🟩 Dacă utilizatorul vine de la o rezervare, redirecționează acolo
                     if (TempData["destinatie"] != null)
                     {
                          TempData.Keep();
@@ -70,6 +76,7 @@ public class LoginController : Controller
                          });
                     }
 
+                    // 🟦 Redirecționare normală în funcție de rol
                     if (result.User.Level == URole.Admin)
                          return RedirectToAction("Index", "Admin");
                     else
@@ -77,12 +84,13 @@ public class LoginController : Controller
                }
                else
                {
-                    ModelState.AddModelError("", "Nume de utilizator sau parola incorectă. Vă rugăm să încercați din nou!");
+                    ModelState.AddModelError("", "Nume de utilizator sau parolă incorectă. Vă rugăm să încercați din nou!");
                }
           }
 
           return View("~/Views/Login/Login.cshtml");
      }
+
 
 
      [HttpGet]

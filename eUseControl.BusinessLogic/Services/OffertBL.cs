@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace eUseControl.BusinessLogic
 {
-     class OffertBL :UserApi, IUserOfert
+     class OffertBL :AdminApi, IUserOfert
      {
           public new List<Ofert> GetAllOferts()
           {
