@@ -51,11 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminUserBL.cs" />
+    <Compile Include="Services\AdminOffertBL.cs" />
+    <Compile Include="Services\AdminUserBL.cs" />
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="Core\AdminApi.cs" />
     <Compile Include="Core\UserApi.cs" />
     <Compile Include="DBModel\UserContext.cs" />
+    <Compile Include="Interfaces\IAdminOffert.cs" />
     <Compile Include="Interfaces\IAdminUser.cs" />
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IRezervare.cs" />
@@ -70,10 +72,10 @@
       <DependentUpon>202505222012244_UpdateUserModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="ProductBL.cs" />
+    <Compile Include="Services\OffertBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RezervareBL.cs" />
-    <Compile Include="SessionBL.cs" />
+    <Compile Include="Services\RezervareBL.cs" />
+    <Compile Include="Services\SessionBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eUseControl.Domain\eUseControl.Domain.csproj">

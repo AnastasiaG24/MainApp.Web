@@ -1,5 +1,4 @@
-﻿using eUseControl.BusinessLogic.DBModel;
-using eUseControl.BusinessLogic.Interfaces;
+﻿using eUseControl.BusinessLogic.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +20,9 @@ namespace MainApp.Web.Controllers
           public ActionResult Index()
           {
                if ((string)Session["LoginStatus"] != "login")
+               {
                     return RedirectToAction("Login", "Login");
+               }
 
                if ((string)Session["UserRole"] != "Admin")
                     return RedirectToAction("Unauthorized", "Login");

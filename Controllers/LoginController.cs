@@ -2,6 +2,7 @@
 using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Entities.User.Global;
 using eUseControl.Domain.Enums;
+using eUseControl.Helpers.Helpers;
 using MainApp.Web.Models;
 using System;
 using System.Diagnostics;
@@ -44,37 +45,37 @@ public class LoginController : Controller
 
                var result = _session.UserLogin(data);
 
-            if (result.Status && result.User != null)
-            {
-                Session["Username"] = result.User.Username;
-                Session["UserRole"] = result.User.Level.ToString();
-                Session["LoginStatus"] = "login";
+               if (result.Status && result.User != null)
+               {
+                    Session["Username"] = result.User.Username;
+                    Session["UserRole"] = result.User.Level.ToString();
+                    Session["LoginStatus"] = "login";
 
-                if (TempData["destinatie"] != null)
-                {
-                    TempData.Keep();
-                    string dest = TempData["destinatie"].ToString();
-                    string nume = TempData["numeTemp"]?.ToString();
-                    string email = TempData["emailTemp"]?.ToString();
-                    string cerere = TempData["cerereTemp"]?.ToString();
-                    int persoane = TempData["persoaneTemp"] != null ? Convert.ToInt32(TempData["persoaneTemp"]) : 2;
-
-                    return RedirectToAction("OfertaRezervare", "Rezervare", new
+                    if (TempData["destinatie"] != null)
                     {
-                        destinatie = dest,
-                        nume = nume,
-                        email = email,
-                        cerere = cerere,
-                        persoane = persoane
-                    });
-                }
+                         TempData.Keep();
+                         string dest = TempData["destinatie"].ToString();
+                         string nume = TempData["numeTemp"]?.ToString();
+                         string email = TempData["emailTemp"]?.ToString();
+                         string cerere = TempData["cerereTemp"]?.ToString();
+                         int persoane = TempData["persoaneTemp"] != null ? Convert.ToInt32(TempData["persoaneTemp"]) : 2;
 
-                if (result.User.Level == URole.Admin)
-                    return RedirectToAction("Index", "Admin");
-                else
-                    return RedirectToAction("Index", "Home");
-            }
-            else
+                         return RedirectToAction("OfertaRezervare", "Rezervare", new
+                         {
+                              destinatie = dest,
+                              nume = nume,
+                              email = email,
+                              cerere = cerere,
+                              persoane = persoane
+                         });
+                    }
+
+                    if (result.User.Level == URole.Admin)
+                         return RedirectToAction("Index", "Admin");
+                    else
+                         return RedirectToAction("Index", "Home");
+               }
+               else
                {
                     ModelState.AddModelError("", "Nume de utilizator sau parola incorectă. Vă rugăm să încercați din nou!");
                }

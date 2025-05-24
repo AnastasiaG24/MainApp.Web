@@ -8,11 +8,4 @@ namespace eUseControl.BusinessLogic.Interfaces
           Ofert GetOfertById(int id);
           List<Ofert> GetAllOferts();
      }
-
-     public interface IAdminOfert : IUserOfert
-     {
-          void AddOfert(Ofert ofert);
-          void UpdateOfert(Ofert ofert);
-          void DeleteOfertById(int id);
-     }
 }

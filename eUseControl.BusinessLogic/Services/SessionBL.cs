@@ -7,12 +7,12 @@ namespace eUseControl.BusinessLogic
 {
      public class SessionBL : UserApi, ISession
      {
-          public UserLoginResp UserLogin(UserLoginData data)
+          public new UserLoginResp UserLogin(UserLoginData data)
           {
                return base.UserSessionData(data);
           }
 
-          public LevelStatus CheckLevel(string key)
+          public new LevelStatus CheckLevel(string key)
           {
                return base.CheckLevel(key);
           }

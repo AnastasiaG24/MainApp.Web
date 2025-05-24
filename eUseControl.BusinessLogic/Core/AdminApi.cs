@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace eUseControl.BusinessLogic.Core
 {
-     internal class AdminApi : ISession, IAdminOfert, IAuth
+     public class AdminApi
      {
           private readonly UserContext db;
 
@@ -239,6 +239,13 @@ namespace eUseControl.BusinessLogic.Core
                status.SessionKey = user.Username;
                db.SaveChanges();
                return status;
+          }
+          public List<UserDbTable> GetAllUsers()
+          {
+               using (var db = new UserContext())
+               {
+                    return db.Users.ToList();
+               }
           }
      }
 }

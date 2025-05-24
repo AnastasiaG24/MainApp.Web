@@ -215,7 +215,8 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ProductDetailController.cs" />
+    <Compile Include="Controllers\AdminOffertController.cs" />
+    <Compile Include="Controllers\OfertsController.cs" />
     <Compile Include="Controllers\RezervareController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -257,6 +258,11 @@
     <Content Include="Views\Blog\Mare.cshtml" />
     <Content Include="Views\Blog\Munti.cshtml" />
     <Content Include="Views\Pagini\Rezerveaza_calatorie.cshtml" />
+    <Content Include="Views\Oferts\Create.cshtml" />
+    <Content Include="Views\Oferts\Delete.cshtml" />
+    <Content Include="Views\Oferts\Details.cshtml" />
+    <Content Include="Views\Oferts\Edit.cshtml" />
+    <Content Include="Views\Oferts\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

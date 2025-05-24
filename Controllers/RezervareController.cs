@@ -1,7 +1,7 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using eUseControl.BusinessLogic.Interfaces;
 using eUseControl.Domain.Entities;
-using eUseControl.BusinessLogic.Interfaces;
+using System;
+using System.Web.Mvc;
 
 namespace MainApp.Web.Controllers
 {

@@ -1,5 +1,6 @@
 ﻿using eUseControl.BusinessLogic.DBModel;
 using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.Domain.Entities;
 using eUseControl.Domain.Entities.Product;
 using eUseControl.Domain.Entities.Res;
 using eUseControl.Domain.Entities.User;
@@ -12,7 +13,7 @@ using System.Linq;
 
 namespace eUseControl.BusinessLogic.Core
 {
-     public class UserApi : ISession, IUserOfert, IAuth
+     public class UserApi
      {
           private readonly UserContext db;
           public UserApi()
@@ -90,11 +91,11 @@ namespace eUseControl.BusinessLogic.Core
                }
 
 
-                    var exists = db.Users.FirstOrDefault(u =>
-                        u.Credential == register.Credential || u.Email == register.Email);
+               var exists = db.Users.FirstOrDefault(u =>
+                   u.Credential == register.Credential || u.Email == register.Email);
 
-                    if (exists != null)
-                         throw new InvalidOperationException("Utilizatorul sau emailul există deja.");
+               if (exists != null)
+                    throw new InvalidOperationException("Utilizatorul sau emailul există deja.");
 
                var cart = new Cart
                {
@@ -116,7 +117,7 @@ namespace eUseControl.BusinessLogic.Core
 
                db.Users.Add(newUser);
                db.SaveChanges();
-               
+
                return true;
           }
 
@@ -192,6 +193,23 @@ namespace eUseControl.BusinessLogic.Core
                     };
                }
                return new UserLoginResp { Status = true };
+          }
+
+          public void SalveazaRezervare(Rezervare rezervare)
+          {
+               using (var db = new UserContext())
+               {
+                    db.Rezervari.Add(rezervare);
+                    db.SaveChanges();
+               }
+          }
+          public void SalveazaOferta(RezervareOferta oferta)
+          {
+               using (var db = new UserContext())
+               {
+                    db.RezervariOferte.Add(oferta);
+                    db.SaveChanges();
+               }
           }
      }
 }

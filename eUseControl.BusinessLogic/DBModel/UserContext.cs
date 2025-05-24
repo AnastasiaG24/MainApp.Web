@@ -12,6 +12,8 @@ namespace eUseControl.BusinessLogic.DBModel
           public virtual DbSet<Ofert> Oferts { get; set; }
           public DbSet<Rezervare> Rezervari { get; set; }
           public DbSet<RezervareOferta> RezervariOferte { get; set; }
-    }
+
+          public System.Data.Entity.DbSet<eUseControl.Domain.Entities.Product.Cart> Carts { get; set; }
+     }
 }
 
