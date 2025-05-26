@@ -20,14 +20,13 @@ public class LoginController : Controller
           _session = b1.GetSessionBL();
      }
 
-     // Afișare pagină de login
      [HttpGet]
      public ActionResult Login()
      {
           return View("~/Views/Login/Login.cshtml");
      }
 
-     // Procesare date login
+     // LOGIN
      [HttpPost]
      [ValidateAntiForgeryToken]
      public ActionResult Index(UserLogin login)
@@ -50,13 +49,11 @@ public class LoginController : Controller
                     Session["UserRole"] = result.User.Level.ToString();
                     Session["LoginStatus"] = "login";
 
-                    // 🟨 Setează nivelul
                     if (result.User.Level == URole.Admin)
                          Session["Level"] = "Admin";
                     else
                          Session["Level"] = "User";
 
-                    // 🟩 Dacă utilizatorul vine de la o rezervare, redirecționează acolo
                     if (TempData["destinatie"] != null)
                     {
                          TempData.Keep();
@@ -76,7 +73,6 @@ public class LoginController : Controller
                          });
                     }
 
-                    // 🟦 Redirecționare normală în funcție de rol
                     if (result.User.Level == URole.Admin)
                          return RedirectToAction("Index", "Admin");
                     else
@@ -122,14 +118,13 @@ public class LoginController : Controller
                register.Password = HashHelper.GetMD5Hash(register.Password);
                register.ConfirmPassword = HashHelper.GetMD5Hash(register.ConfirmPassword);
 
-               var result = _session.RegisterUser(register); // AICI verificăm rezultatul
+               var result = _session.RegisterUser(register);
 
-               // 🔽 AICI adaugi blocul pentru redirecționare dacă utilizatorul venea de la rezervare
                if (result)
                {
                     if (TempData["destinatie"] != null)
                     {
-                         TempData.Keep(); // păstrează datele pentru pasul următor (login)
+                         TempData.Keep();
                     }
 
                     return RedirectToAction("Login", "Login");

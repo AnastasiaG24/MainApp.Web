@@ -277,7 +277,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="bin\roslyn\" />
     <Folder Include="Data\" />
-    <Folder Include="Views\AdminRezervare\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="eUseControl.BusinessLogic\eUseControl.BusinessLogic.csproj">

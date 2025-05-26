@@ -18,9 +18,8 @@ namespace MainApp.Web.Controllers
           public ActionResult Index()
           {
                var oferte = _adminOffertBL.GetAllOferts();
-               return View(oferte); 
+               return View(oferte);
           }
-
 
           public ActionResult Details(int? id)
           {
@@ -33,6 +32,5 @@ namespace MainApp.Web.Controllers
 
                return View(oferta);
           }
-
      }
 }

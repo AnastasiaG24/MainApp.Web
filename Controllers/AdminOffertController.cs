@@ -50,23 +50,23 @@ namespace MainApp.Web.Controllers
                return View();
           }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Ofert ofert)
-        {
-            if (Session["Level"]?.ToString() != "Admin")
-                return RedirectToAction("Index", "Home");
+          [HttpPost]
+          [ValidateAntiForgeryToken]
+          public ActionResult Create(Ofert ofert)
+          {
+               if (Session["Level"]?.ToString() != "Admin")
+                    return RedirectToAction("Index", "Home");
 
-            if (ModelState.IsValid)
-            {
-                _adminOffertBL.AddOfert(ofert);
-                return RedirectToAction("Index", "Promotii"); 
-            }
+               if (ModelState.IsValid)
+               {
+                    _adminOffertBL.AddOfert(ofert);
+                    return RedirectToAction("Index", "Promotii");
+               }
 
-            return View(ofert);
-        }
+               return View(ofert);
+          }
 
-            public ActionResult Edit(int? id)
+          public ActionResult Edit(int? id)
           {
                if (Session["Level"]?.ToString() != "Admin")
                     return RedirectToAction("Index", "Home");
@@ -91,8 +91,8 @@ namespace MainApp.Web.Controllers
                if (ModelState.IsValid)
                {
                     _adminOffertBL.UpdateOfert(ofert);
-                return RedirectToAction("Index", "Promotii");
-            }
+                    return RedirectToAction("Index", "Promotii");
+               }
 
                return View(ofert);
           }
@@ -112,15 +112,15 @@ namespace MainApp.Web.Controllers
                return View(oferta);
           }
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            if (Session["Level"]?.ToString() != "Admin")
-                return RedirectToAction("Index", "Home");
+          [HttpPost, ActionName("Delete")]
+          [ValidateAntiForgeryToken]
+          public ActionResult DeleteConfirmed(int id)
+          {
+               if (Session["Level"]?.ToString() != "Admin")
+                    return RedirectToAction("Index", "Home");
 
-            _adminOffertBL.DeleteOfertById(id);
-            return RedirectToAction("Index", "Promotii");
-        }
-    }
+               _adminOffertBL.DeleteOfertById(id);
+               return RedirectToAction("Index", "Promotii");
+          }
+     }
 }

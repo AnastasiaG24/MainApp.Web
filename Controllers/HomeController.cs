@@ -30,12 +30,10 @@ namespace MainApp.Web.Controllers
           {
                return View("~/Views/Promotii/Promotii.cshtml");
           }
-          
 
           public ActionResult Aventura() { return View("~/Views/Blog/Aventura.cshtml"); }
           public ActionResult Munti() { return View("~/Views/Blog/Munti.cshtml"); }
           public ActionResult Mare() { return View("~/Views/Blog/Mare.cshtml"); }
-
           public ActionResult Destinatii() { return View("~/Views/Pagini/Destinatie.cshtml"); }
           public ActionResult Explorare() { return View("~/Views/Pagini/Explorare.cshtml"); }
           public ActionResult Galerie() { return View("~/Views/Pagini/Galerie.cshtml"); }

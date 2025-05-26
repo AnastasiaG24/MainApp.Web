@@ -26,17 +26,17 @@ namespace eUseControl.BusinessLogic.Services
                base.DeleteOfertById(id);
           }
 
-          public List<Ofert> GetAllOferts()
+          public new List<Ofert> GetAllOferts()
           {
                return base.GetAllOferts();
           }
 
-          public Ofert GetOfertById(int id)
+          public new Ofert GetOfertById(int id)
           {
                return base.GetOfertById(id);
           }
 
-          public void UpdateOfert(Ofert ofert)
+          public new void UpdateOfert(Ofert ofert)
           {
                base.UpdateOfert(ofert);
           }
